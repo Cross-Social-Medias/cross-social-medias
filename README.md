@@ -1,4 +1,4 @@
-# my-nuxt-app-01
+# Cross Social Medias
 
 > Nuxt.js project
 
