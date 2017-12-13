@@ -11,6 +11,14 @@ module.exports = {
     'html'
   ],
   // add your custom rules here
-  rules: {},
+  rules: {
+    "semi": 2,
+    "no-debugger": 1,
+    "no-console": 1,
+    "no-extra-semi": 2,
+    "yoda": 2,
+    "no-multi-spaces": 2,
+    "quotes": 0
+  },
   globals: {}
 }
