@@ -1,16 +1,18 @@
 <template>
-  <section class="container">
-    <div class="row">
-      <feednews
-        v-for="provider in providers"
-        :key="provider.id"
-        :provider="provider"
-      />
-    </div>
-  </section>
-  <footer/>
-    <nuxt-link to="/about">About page</nuxt-link>
-  </footer>
+  <div>
+    <section>
+      <div class="row">
+        <feednews
+          v-for="provider in providers"
+          :key="provider.id"
+          :provider="provider"
+        />
+      </div>
+    </section>
+    <footer class="footer">
+      <nuxt-link to="/about">About page</nuxt-link>
+    </footer>
+  </div>
 </template>
 
 <script>
