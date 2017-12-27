@@ -12,7 +12,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "semi": 2,
+    "semi": 0,
     "no-debugger": 1,
     "no-unused-vars": 1,
     "no-console": 1,
@@ -20,7 +20,7 @@ module.exports = {
     "no-extra-semi": 2,
     "yoda": 2,
     "no-multi-spaces": 2,
-    "quotes": 0
+    "quotes": 0,
   },
   globals: {}
 }
