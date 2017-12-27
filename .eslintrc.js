@@ -14,6 +14,7 @@ module.exports = {
   rules: {
     "semi": 2,
     "no-debugger": 1,
+    "no-unused-vars": 1,
     "no-console": 1,
     "no-unused-vars": 1,
     "no-extra-semi": 2,
