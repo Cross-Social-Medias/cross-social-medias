@@ -40,5 +40,8 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  serverMiddleware: [
+    '~/routes/api.js'
+  ]
 }
