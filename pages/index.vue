@@ -1,5 +1,6 @@
 <template>
   <div>
+    <a href="/api">API</a>
     <section>
       <div class="row">
         <feednews
