@@ -2,6 +2,23 @@
 
 > Nuxt.js project
 
+## Environment variable
+To use this application in local :
+ - create a twitter app [here](https://apps.twitter.com/)
+ - fill environnement variables from your twitter credentials( you can find them `https://apps.twitter.com/app/your_app_id/keys`)
+ 
+```
+consumer_key=your_consumer_key
+consumer_secret=your_consumer_secret
+access_token_key=your_access_token_key
+access_token_secret=your_access_token_secret
+```
+
+Cross Social Media supports declaring default environment variables in an environment file named `.env`.
+
+More information about `.env` [here](https://github.com/motdotla/dotenv)
+
+
 ## Build Setup
 
 ``` bash
@@ -20,3 +37,4 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+
