@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
   /*
   ** Headers of the page
   */
@@ -42,6 +45,6 @@ module.exports = {
     }
   },
   serverMiddleware: [
-    '~/routes/api.js'
+    '~/routes/twitter_entry_point.js'
   ]
 }
