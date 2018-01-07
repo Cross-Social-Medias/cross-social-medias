@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="/api">API</a>
+    <a href="/twitter">twitter api</a>
     <section>
       <div class="row">
         <feednews
