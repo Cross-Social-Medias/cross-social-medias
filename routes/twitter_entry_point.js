@@ -11,10 +11,9 @@ const client = new Twitter({
 });
 
 app.get('/', (req, res) => {
-  // // https://dev.twitter.com/rest/reference/get/statuses/user_timeline
-  client.get('statuses/user_timeline', { screen_name: 'nodejs', count: 20 }, (error, tweets, response) => {
+  client.get('statuses/user_timeline', { screen_name: req.query.username, count: 100 }, (error, tweets, response) => {
     if (!error) {
-      res.status(200).json({ title: 'Express', tweets: tweets });
+      res.status(200).json({ title: req.query.username, tweets: tweets });
     }
     else {
       res.status(500).json({ error: error });
@@ -24,6 +23,6 @@ app.get('/', (req, res) => {
 
 
 module.exports = {
-   path: '/api',
+   path: '/twitter_entry_point',
    handler: app
 }
