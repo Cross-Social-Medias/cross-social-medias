@@ -9,7 +9,6 @@
           :provider="provider"
         />
       </div>
-      <p>{{counter}}</p>
     </section>
     <footer class="footer">
       <nuxt-link to="/about">About page</nuxt-link>
@@ -18,8 +17,7 @@
 </template>
 
 <script>
-  import Feednews from '~/components/Feednews.vue'
-  import { mapState } from 'vuex'
+  import Feednews from '~/components/Feednews.vue';
 
   let nextTodoId = 1
 
@@ -46,11 +44,11 @@
       }
     },
     fetch ({ store }) {
-      store.commit('update')
+      store.commit('update');
     },
-    computed: mapState([
-      'counter'
-    ])
+    computed: {
+      research () { return this.$store.state.research.research; }
+    }
   }
 </script>
 <style src="~/assets/css/index.css"></style>
