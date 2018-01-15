@@ -56,12 +56,6 @@
     data () {
       return {}
     },
-    fetch ({ store }) {
-      store.commit('update');
-    },
-    computed: {
-      research () { return this.$store.state.research.research; }
-    },
     methods: {
       updateResearch (newSearch) {
         this.$store.commit('research/update', newSearch);
