@@ -35,7 +35,7 @@
         </button>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <searchBar :search="mySearch">
+          <searchBar :search="search">
           </searchBar>
         </form>
       </div>
