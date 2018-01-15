@@ -1,14 +1,9 @@
-import Vuex from 'vuex'
+export const state = () => ({
+  counter: 0
+})
 
-import research from './research'
-
-const createStore = () => {
-  return new Vuex.Store({
-    state: {
-      research: ""
-    },
-    research
-  })
+export const mutations = {
+  increment (state) {
+    state.counter++
+  }
 }
-
-export default createStore
