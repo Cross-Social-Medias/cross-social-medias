@@ -11,11 +11,23 @@
 
 <script>
 import axios from 'axios';
+import { mapGetters } from 'vuex'
 
 export default {
-  async asyncData ({ params }) {
+  data () {
+    return {
+      search: ""
+    }
+  },
+  computed: {
+    ...mapGetters({
+      research: 'getResearch'
+    })
+  },
+  async asyncData ({ store }) {
     const username = "AnthonyLastella";
-    console.log(process.env.baseUrl);
+    // console.log(this.bite);
+    console.info("jkjkjkjjkj ", store.state.research);
     let { data } = await axios.get(`${process.env.baseUrl}/twitter_entry_point?username=${username}`)
     return { tweets: data.tweets, title: data.title }
   }
