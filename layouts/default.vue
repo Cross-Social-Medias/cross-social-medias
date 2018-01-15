@@ -35,7 +35,7 @@
         </button>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <searchBar :search="search">
+          <searchBar @on-submit="updateResearch">
           </searchBar>
         </form>
       </div>
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-  import SearchBar from '~/components/SearchBar.vue'
+  import SearchBar from '~/components/SearchBar.vue';
 
   export default {
     components: {
@@ -55,6 +55,17 @@
     },
     data () {
       return {}
+    },
+    fetch ({ store }) {
+      store.commit('update');
+    },
+    computed: {
+      research () { return this.$store.state.research.research; }
+    },
+    methods: {
+      updateResearch (newSearch) {
+        this.$store.commit('research/update', newSearch);
+      }
     }
   }
 </script>
