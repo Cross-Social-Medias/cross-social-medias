@@ -35,8 +35,8 @@
         </button>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <searchBar @on-submit="updateResearch">
+          </searchBar>
         </form>
       </div>
     </nav>
@@ -45,3 +45,21 @@
     </div>
   </div>
 </template>
+
+<script>
+  import SearchBar from '~/components/SearchBar.vue';
+
+  export default {
+    components: {
+      SearchBar
+    },
+    data () {
+      return {}
+    },
+    methods: {
+      updateResearch (newSearch) {
+        this.$store.commit('research/update', newSearch);
+      }
+    }
+  }
+</script>
