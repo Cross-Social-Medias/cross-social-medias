@@ -1,11 +1,16 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
-      <ul id="example-1">
-  	  <li v-for="tweet in tweets">
-        {{ tweet.text }}
-      </li>
-    </ul>
+    <div v-if="tweets.length > 0">
+      <h1>{{ title }}</h1>
+        <ul>
+        <li v-for="tweet in tweets">
+          {{ tweet.text }}
+        </li>
+      </ul>
+    </div>
+    <div v-else>
+      <p>User not exist</p>
+    </div>
   </div>
 </template>
 
