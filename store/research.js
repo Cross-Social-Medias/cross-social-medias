@@ -8,7 +8,6 @@ export const getters = {
 
 export const mutations = {
   update (state, text) {
-    console.log(text);
     state.research = text;
   }
 }

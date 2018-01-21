@@ -16,7 +16,8 @@ export default {
   data () {
     return {
       tweets: [],
-      title: ""
+      title: "",
+      error: ""
     }
   },
   computed: {
@@ -33,9 +34,10 @@ export default {
         .then(response => {
           this.tweets = response.data.tweets;
           this.title = response.data.title;
+          this.error = "";
         })
         .catch(e => {
-          console.log(e);
+          this.error = "Something went wrong. Try again !";
         })
     }
   },
