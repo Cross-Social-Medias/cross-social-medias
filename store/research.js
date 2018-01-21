@@ -1,5 +1,5 @@
 export const state = () => ({
-  research: ""
+  research: "AnthonyLastella"
 })
 
 export const getters = {
