@@ -1,35 +1,48 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-      <ul id="example-1">
-  	  <li v-for="tweet in tweets">
-        {{ tweet.text }}
-      </li>
+      <ul>
+        <li v-for="tweet in tweets">
+          {{ tweet.text }}
+        </li>
     </ul>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import { mapGetters } from 'vuex'
 
 export default {
   data () {
     return {
-      search: ""
+      tweets: [],
+      title: ""
     }
   },
   computed: {
-    ...mapGetters({
-      research: 'getResearch'
-    })
+    search () {
+      return this.$store.state.research.research;
+    }
   },
-  async asyncData ({ store }) {
-    const username = "AnthonyLastella";
-    // console.log(this.bite);
-    console.info("jkjkjkjjkj ", store.state.research);
-    let { data } = await axios.get(`${process.env.baseUrl}/twitter_entry_point?username=${username}`)
-    return { tweets: data.tweets, title: data.title }
+  created () {
+    this.callApi();
+  },
+  methods: {
+    callApi () {
+      axios.get(`${process.env.baseUrl}/twitter_entry_point?username=${this.search}`)
+        .then(response => {
+          this.tweets = response.data.tweets;
+          this.title = response.data.title;
+        })
+        .catch(e => {
+          console.log(e);
+        })
+    }
+  },
+  watch: {
+    search (val) {
+      this.callApi();
+    }
   }
 }
 </script>
