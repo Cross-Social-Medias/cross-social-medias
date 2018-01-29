@@ -45,6 +45,7 @@ module.exports = {
     }
   },
   serverMiddleware: [
-    '~/routes/twitter_entry_point.js'
+    '~/routes/instagram_entry_point.js',
+    '~/routes/twitter_entry_point.js',
   ]
 }
