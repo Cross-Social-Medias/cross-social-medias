@@ -1,28 +1,39 @@
 <template>
-  <div>
-    <div v-if="error.length > 0">
-      <div class="alert alert-danger">{{ error }}</div>
+<div>
+  <div v-if="error.length > 0">
+    <div class="alert alert-danger">{{ error }}</div>
+  </div>
+  <div v-else>
+    <div v-if="tweets.length > 0">
+      <h1> {{ title }} </h1>
+      <div class="card-columns">
+        <card
+        v-for="tweet in tweets"
+        :key="tweet.id"
+        :tweet="tweet"
+        />
+      </div>
+      <ul>
+        <li v-for="tweet in tweets">
+          {{ tweet.text }}
+        </li>
+      </ul>
     </div>
     <div v-else>
-      <div v-if="tweets.length > 0">
-        <h1>{{ title }}</h1>
-          <ul>
-          <li v-for="tweet in tweets">
-            {{ tweet.text }}
-          </li>
-        </ul>
-      </div>
-      <div v-else>
-        <div class="alert alert-info">User not exist</div>
-      </div>
+      <div class="alert alert-info">User not exist</div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
 import axios from 'axios';
+import Card from '~/components/Card.vue';
 
 export default {
+  components: {
+    Card
+  },
   data () {
     return {
       tweets: [],
