@@ -12,6 +12,8 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    "indent": 1,
+    "space-before-function-paren": 0,
     "semi": 0,
     "no-debugger": 1,
     "no-unused-vars": 1,
