@@ -6,13 +6,15 @@ const app = express();
 
 instagramApi.use({ client_id:  process.env.client_id, client_secret:  process.env.client_secret });
 
-const redirect_uri = 'http://f28890db.ngrok.io/handleauth';
+const redirect_uri = 'http://localhost:3000/instagram_entry_point/handleauth';
 
-exports.authorize_user = function(req, res) {
+// This is where you would initially send users to authorize
+app.get('/authorize_user', (req, res) => {
   res.redirect(instagramApi.get_authorization_url(redirect_uri, { scope: ['likes'], state: 'a state' }));
-};
+});
 
-exports.handleauth = function(req, res) {
+// This is your redirect URI
+app.get('/handleauth', (req, res) => {
   instagramApi.authorize_user(req.query.code, redirect_uri, function(err, result) {
     if (err) {
       console.log(err.body);
@@ -22,13 +24,20 @@ exports.handleauth = function(req, res) {
       res.send('You made it!!');
     }
   });
-};
+});
 
+app.get("/user_search", (req, res) => {
+  instagramApi.user_search(req.query.username, [{count: 1}], (err, users, remaining, limit) => {
+    //TODO
+  });
+});
 
-// This is where you would initially send users to authorize
-app.get('/authorize_user', exports.authorize_user);
-// This is your redirect URI
-app.get('/handleauth', exports.handleauth);
+app.get("/", (req, res) => {
+  instagramApi.user('516372258', (err, result, remaining, limit) =>  {
+    res.send(err);
+  });
+});
+
 
 module.exports = {
    path: '/instagram_entry_point',
