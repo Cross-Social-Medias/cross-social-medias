@@ -8,16 +8,12 @@
       <h1> {{ title }} </h1>
       <div class="card-columns">
         <card
-        v-for="tweet in tweets"
-        :key="tweet.id"
-        :tweet="tweet"
+          v-for="tweet in tweets"
+            kind="twitter"
+            :key="tweet.id"
+            :infos="tweet"
         />
       </div>
-      <ul>
-        <li v-for="tweet in tweets">
-          {{ tweet.text }}
-        </li>
-      </ul>
     </div>
     <div v-else>
       <div class="alert alert-info">User not exist</div>
