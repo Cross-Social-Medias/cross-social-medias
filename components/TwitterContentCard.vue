@@ -1,18 +1,17 @@
 <template>
-    <div class="card">
+  <div>
+    <div class="card-body">
       <div v-if="twitter.entities.media">
         <div v-for="(val, key, index) in twitter.entities.media">
-          <img :src="twitter.entities.media[0].media_url_https" style="height:70px;width:auto"/>
+          <img class="card-img-top" :src="val.media_url_https" alt="Card image cap">
         </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">{{ twitter.text }}</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">{{ twitter.created_at }}</small>
-      </div>
+      <p class="card-text">{{ twitter.text }}</p>
     </div>
+    <div class="card-footer">
+      <small class="text-muted">{{ twitter.created_at }}</small>
+    </div>
+  </div>
 </template>
 
 <script>
