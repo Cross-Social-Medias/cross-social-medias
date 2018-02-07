@@ -8,8 +8,8 @@
       <h1> {{ title }} </h1>
       <div class="card-columns">
         <card
-          v-for="tweet in tweets"
             kind="twitter"
+          v-for="tweet in tweets"
             :key="tweet.id"
             :infos="tweet"
         />
