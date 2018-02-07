@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card text-white bg-dark mb-3">
       <div v-if="kind === 'twitter'">
         <twitter-content-card :twitter="infos" />
       </div>
