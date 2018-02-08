@@ -1,6 +1,9 @@
 <template>
   <div class="col-md-4">
-    <h3>Social Network news from {{ provider.text }}</h3>
+    <a v-if="provider.text === 'Twitter' "href="/twitter">
+      <h3>Social Network news from {{ provider.text }}</h3>
+    </a>
+    <h3 v-else>Social Network news from {{ provider.text }}</h3>
   </div>
 </template>
 
