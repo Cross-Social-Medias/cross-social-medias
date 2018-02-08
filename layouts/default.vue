@@ -12,27 +12,14 @@
             <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Don't know</a>
+            <a class="nav-link" href="/twitter">Twitter</a></i>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link disabled" href="#">Instagram</a>
           </li>
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/javascript">#Javascript <span class="badge badge-primary">Hashtag</span></a>
-            <a class="dropdown-item" href="#">Quincy Larson <span class="badge badge-info">Personne</span></a>
-            <a class="dropdown-item" href="#">Lille <span class="badge badge-success">Lieu</span></a>
-            <a class="dropdown-item" href="#">Dunno <span class="badge badge-warning">Warning</span></a>
-            <a class="dropdown-item" href="#">Don't really know <span class="badge badge-dark">Dark</span></a>
-          </div>
-        </li>
-        <button class="btn">
-          What's new ? <span class="badge badge-secondary">9</span>
-          <span class="sr-only">Unread messages</span>
-        </button>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Facebook</a>
+          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <searchBar @on-submit="updateResearch">
