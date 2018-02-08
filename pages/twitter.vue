@@ -4,7 +4,12 @@
       <div class="alert alert-danger">{{ error }}</div>
     </div>
     <div v-else>
-      <div v-if="tweets.length > 0">
+      <div v-if="tweets === null">
+        <p class="text-center">
+          <i class="fa fa-refresh fa-spin big-icon text-secondary" aria-hidden="true"></i>
+        </p>
+      </div>
+      <div v-else-if="tweets.length > 0">
         <h1>{{ title }}</h1>
           <ul>
           <li v-for="tweet in tweets">
@@ -25,7 +30,7 @@ import axios from 'axios';
 export default {
   data () {
     return {
-      tweets: [],
+      tweets: null,
       title: "",
       error: ""
     }
@@ -47,7 +52,7 @@ export default {
           this.error = "";
         })
         .catch(e => {
-          this.error = "Something went wrong. Try again !";
+          this.error = "Something went wrong. The user does not exist or there is a network issue. Please Try again !";
         })
     }
   },
