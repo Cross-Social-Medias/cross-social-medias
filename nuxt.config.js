@@ -46,6 +46,12 @@ module.exports = {
   },
   serverMiddleware: [
     '~/routes/instagram_entry_point.js',
-    '~/routes/twitter_entry_point.js',
+    '~/routes/twitter_entry_point.js'
+  ],
+  modules: [
+    '@nuxtjs/font-awesome',
+  ],
+  css: [
+     '@/assets/css/main.css'
   ]
 }
