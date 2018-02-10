@@ -4,7 +4,12 @@ require('dotenv').config();
 
 const app = express();
 
-instagramApi.use({ client_id:  process.env.client_id, client_secret:  process.env.client_secret });
+instagramApi.use({
+  client_id:  process.env.client_id,
+  client_secret:  process.env.client_secret,
+  access_token: process.env.access_token
+});
+
 
 const redirect_uri = 'http://localhost:3000/instagram_entry_point/handleauth';
 
@@ -26,15 +31,9 @@ app.get('/handleauth', (req, res) => {
   });
 });
 
-app.get("/user_search", (req, res) => {
-  instagramApi.user_search(req.query.username, [{count: 1}], (err, users, remaining, limit) => {
-    //TODO
-  });
-});
-
 app.get("/", (req, res) => {
-  instagramApi.user('516372258', (err, result, remaining, limit) =>  {
-    res.send(err);
+  instagramApi.user_search("anthonylastella", (err, result, remaining, limit) =>  {
+    res.send(result);
   });
 });
 
