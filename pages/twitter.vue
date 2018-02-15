@@ -54,6 +54,7 @@ export default {
     callApi () {
       axios.get(`${process.env.baseUrl}/twitter_entry_point?username=${this.search}`)
         .then(response => {
+            getTweets(response.data.tweets);
           this.tweets = response.data.tweets;
           this.title = response.data.title;
           this.error = "";
