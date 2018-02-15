@@ -18,6 +18,7 @@
         </div>
       </div>
       <p class="card-text">{{ twitter.text }}</p>
+      <p>Tu t'es fait retweeter {{ twitter.retweet_count }} fois pelo<span v-if="twitter.retweet_count == 0">sale boloss </span>, y'a {{ twitter.favorite_count }} keumés qui t'ont like tiens <span v-if="twitter.favorite_count == 0">bravo <b>clap clap clap</b></span></p>
     </div>
     <div class="card-footer">
       <small class="text-muted">{{ twitter.created_at }}</small>
