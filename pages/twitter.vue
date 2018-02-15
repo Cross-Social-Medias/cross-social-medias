@@ -10,12 +10,15 @@
         </p>
       </div>
       <div v-else-if="tweets.length > 0">
-        <h1>{{ title }}</h1>
-          <ul>
-          <li v-for="tweet in tweets">
-            {{ tweet.text }}
-          </li>
-        </ul>
+        <h1> {{ title }} </h1>
+        <div class="card-columns">
+          <card
+              kind="twitter"
+            v-for="tweet in tweets"
+              :key="tweet.id"
+              :infos="tweet"
+          />
+        </div>
       </div>
       <div v-else>
         <div class="alert alert-info">User not exist</div>
@@ -26,8 +29,12 @@
 
 <script>
 import axios from 'axios';
+import Card from '~/components/Card.vue';
 
 export default {
+  components: {
+    Card
+  },
   data () {
     return {
       tweets: null,
