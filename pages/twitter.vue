@@ -37,7 +37,6 @@ export default {
   },
   data () {
     return {
-      tweets: null,
       title: "",
       error: ""
     }
@@ -45,17 +44,21 @@ export default {
   computed: {
     search () {
       return this.$store.state.research.research;
+    },
+    tweets() {
+      return this.$store.state.tweets.tweets;
     }
   },
   created () {
-    this.callApi();
+    if (!this.$store.state.tweets.tweets) {
+      this.callApi();
+    }
   },
   methods: {
     callApi () {
       axios.get(`${process.env.baseUrl}/twitter_entry_point?username=${this.search}`)
         .then(response => {
-            getTweets(response.data.tweets);
-          this.tweets = response.data.tweets;
+          this.$store.commit('tweets/getTweets', response.data.tweets);
           this.title = response.data.title;
           this.error = "";
         })
