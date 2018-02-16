@@ -28,41 +28,40 @@
 </template>
 
 <script>
-import axios from 'axios';
-import Card from '~/components/Card.vue';
+  import Card from '~/components/Card.vue';
 
-export default {
-  components: {
-    Card
-  },
-  data () {
-    return {
-      title: "",
-      error: ""
-    }
-  },
-  computed: {
-    search () {
-      return this.$store.state.research.research;
+  export default {
+    components: {
+      Card
     },
-    tweets() {
-      return this.$store.state.tweets.tweets;
-    }
-  },
-  created () {
-    if (!this.$store.state.tweets.tweets) {
-      this.callApi();
-    }
-  },
-  methods: {
-    callApi () {
-      this.$store.dispatch("tweets/fetchTweets", { search: this.search });
-    }
-  },
-  watch: {
-    search (val) {
-      this.callApi();
+    data () {
+      return {
+        title: "",
+        error: ""
+      }
+    },
+    computed: {
+      search () {
+        return this.$store.state.research.research;
+      },
+      tweets() {
+        return this.$store.state.tweets.tweets;
+      }
+    },
+    created () {
+      if (!this.$store.state.tweets.tweets) {
+        this.callApi();
+      }
+    },
+    methods: {
+      callApi () {
+        this.$store.dispatch("tweets/fetchTweets", { search: this.search });
+      }
+    },
+    watch: {
+      search (val) {
+        this.callApi();
+      }
     }
   }
-}
 </script>
