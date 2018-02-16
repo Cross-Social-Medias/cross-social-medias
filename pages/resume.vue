@@ -13,7 +13,7 @@
       <div v-else-if="tweets.length > 0">
         <h1> {{ title }} </h1>
         <div v-for="tweet in tweets">
-            {{ index }}
+            <!-- {{ index }} -->
         </div>
       </div>
       <div v-else>
@@ -28,18 +28,30 @@
 export default {
   data () {
     return {
-      tweets: null,
-      title: 'Un jour ca marchera et on aura plein de sous a rien foutre'
+      title: 'Fake title',
+      error: ""
     }
   },
   computed: {
+    search () {
+      return this.$store.state.research.research;
+    },
+     tweets() {
+      return this.$store.state.tweets.tweets;
+    }
+  },
+   methods: {
+    callApi () {
+      this.$store.dispatch("tweets/fetchTweets", { search: this.search });
+    }
   },
   created () {
-    this.tweets = this.$store.state.tweets.tweets;
-  },
-  methods: {
+    this.callApi();
   },
   watch: {
+    search (val) {
+      this.callApi();
+    }
   }
 }
 </script>
