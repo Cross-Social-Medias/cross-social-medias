@@ -7,7 +7,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-  FETCH_TWEETS(state, tweets, title, error) {
+  FETCH_TWEETS(state, { tweets, title, error }) {
     state.tweets = tweets.slice();
     state.title = title;
     state.error = "";
@@ -22,7 +22,7 @@ export const actions = {
     axios.get(`${process.env.baseUrl}/twitter_entry_point?username=${search}`)
       .then(response => {
         const { tweets, title, error } = response.data;
-        commit('FETCH_TWEETS', tweets, title, error);
+        commit('FETCH_TWEETS', { tweets, title, error });
       })
       .catch(e => {
         commit('ADD_ERROR', "Something went wrong. The user does not exist or there is a network issue. Please Try again !");
