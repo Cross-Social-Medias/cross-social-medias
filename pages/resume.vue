@@ -26,31 +26,23 @@
 <script>
 
 export default {
-  data () {
-    return {
-      title: 'Fake title',
-      error: ""
-    }
-  },
   computed: {
-    search () {
+    search() {
       return this.$store.state.research.research;
     },
-     tweets() {
+    tweets() {
       return this.$store.state.tweets.tweets;
-    }
-  },
-   methods: {
-    callApi () {
-      this.$store.dispatch("tweets/fetchTweets", { search: this.search });
+    },
+    title() {
+      return this.$store.state.tweets.title;
+    },
+    error() {
+      return this.$store.state.tweets.error;
     }
   },
   created () {
-    this.callApi();
-  },
-  watch: {
-    search (val) {
-      this.callApi();
+    if (!this.$store.state.tweets.tweets) {
+      this.$store.dispatch("tweets/fetchTweets", { search: this.search });
     }
   }
 }
