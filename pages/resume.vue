@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
   data () {
@@ -36,7 +35,7 @@ export default {
   computed: {
   },
   created () {
-    this.tweets = return this.$store.state.tweets.tweets;
+    this.tweets = this.$store.state.tweets.tweets;
   },
   methods: {
   },
