@@ -56,15 +56,7 @@ export default {
   },
   methods: {
     callApi () {
-      axios.get(`${process.env.baseUrl}/twitter_entry_point?username=${this.search}`)
-        .then(response => {
-          this.$store.commit('tweets/getTweets', response.data.tweets);
-          this.title = response.data.title;
-          this.error = "";
-        })
-        .catch(e => {
-          this.error = "Something went wrong. The user does not exist or there is a network issue. Please Try again !";
-        })
+      this.$store.dispatch("tweets/fetchTweets", { search: this.search });
     }
   },
   watch: {
