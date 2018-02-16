@@ -50,17 +50,7 @@
     },
     created () {
       if (!this.$store.state.tweets.tweets) {
-        this.callApi();
-      }
-    },
-    methods: {
-      callApi () {
         this.$store.dispatch("tweets/fetchTweets", { search: this.search });
-      }
-    },
-    watch: {
-      search (val) {
-        this.callApi();
       }
     }
   }
