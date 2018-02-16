@@ -34,18 +34,18 @@
     components: {
       Card
     },
-    data () {
-      return {
-        title: "",
-        error: ""
-      }
-    },
     computed: {
-      search () {
+      search() {
         return this.$store.state.research.research;
       },
       tweets() {
         return this.$store.state.tweets.tweets;
+      },
+      title() {
+        return this.$store.state.tweets.title;
+      },
+      error() {
+        return this.$store.state.tweets.error;
       }
     },
     created () {
