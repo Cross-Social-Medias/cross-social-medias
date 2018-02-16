@@ -1,9 +1,9 @@
 export const state = () => ({
-  tweets: null,
+  tweets: null
 })
 
 export const mutations = {
   getTweets(state, tweets) {
-    state.tweets = tweets.slice()
+    state.tweets = tweets.slice();
   }
 }
