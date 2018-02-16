@@ -15,6 +15,8 @@ export default {
   methods: {
     submitResearch (e) {
       this.$emit("on-submit", this.search);
+      // call twitter api
+      this.$store.dispatch("tweets/fetchTweets", { search: this.search });
       e.preventDefault();
     }
   }
