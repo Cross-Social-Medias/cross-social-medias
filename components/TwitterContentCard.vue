@@ -17,7 +17,7 @@
             </div>
         </div>
       </div>
-      <p class="card-text">{{ twitter.text }}</p>
+      <text-formater :text="twitter.text" class="card-text"></text-formater>
       <p>Tu t'es fait retweeter {{ twitter.retweet_count }} fois pelo<span v-if="twitter.retweet_count == 0">sale boloss </span>, y'a {{ twitter.favorite_count }} keumés qui t'ont like tiens <span v-if="twitter.favorite_count == 0">bravo <b>clap clap clap</b></span></p>
     </div>
     <div class="card-footer">
@@ -27,13 +27,17 @@
 </template>
 
 <script>
-
-export default {
-  props: {
-    twitter: {
-      type: Object,
-      required: true
+  import TextFormater from "~/components/TextFormater.vue";
+  
+  export default {
+    components: {
+      TextFormater
+    },
+    props: {
+      twitter: {
+        type: Object,
+        required: true
+      }
     }
   }
-}
 </script>
