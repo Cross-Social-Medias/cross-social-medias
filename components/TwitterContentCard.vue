@@ -28,13 +28,17 @@
 </template>
 
 <script>
-
-export default {
-  props: {
-    twitter: {
-      type: Object,
-      required: true
+  import TextFormater from "~/components/TextFormater.vue";
+  
+  export default {
+    components: {
+      TextFormater
+    },
+    props: {
+      twitter: {
+        type: Object,
+        required: true
+      }
     }
   }
-}
 </script>
