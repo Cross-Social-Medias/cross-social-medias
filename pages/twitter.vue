@@ -28,45 +28,30 @@
 </template>
 
 <script>
-import axios from 'axios';
-import Card from '~/components/Card.vue';
+  import Card from '~/components/Card.vue';
 
-export default {
-  components: {
-    Card
-  },
-  data () {
-    return {
-      tweets: null,
-      title: "",
-      error: ""
-    }
-  },
-  computed: {
-    search () {
-      return this.$store.state.research.research;
-    }
-  },
-  created () {
-    this.callApi();
-  },
-  methods: {
-    callApi () {
-      axios.get(`${process.env.baseUrl}/twitter_entry_point?username=${this.search}`)
-        .then(response => {
-          this.tweets = response.data.tweets;
-          this.title = response.data.title;
-          this.error = "";
-        })
-        .catch(e => {
-          this.error = "Something went wrong. The user does not exist or there is a network issue. Please Try again !";
-        })
-    }
-  },
-  watch: {
-    search (val) {
-      this.callApi();
+  export default {
+    components: {
+      Card
+    },
+    computed: {
+      search() {
+        return this.$store.state.research.research;
+      },
+      tweets() {
+        return this.$store.state.tweets.tweets;
+      },
+      title() {
+        return this.$store.state.tweets.title;
+      },
+      error() {
+        return this.$store.state.tweets.error;
+      }
+    },
+    created () {
+      if (!this.$store.state.tweets.tweets) {
+        this.$store.dispatch("tweets/fetchTweets", { search: this.search });
+      }
     }
   }
-}
 </script>

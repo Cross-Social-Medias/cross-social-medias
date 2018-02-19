@@ -17,8 +17,9 @@
             </div>
         </div>
       </div>
-      <text-formater :text="twitter.text" class="card-text"></text-formater>
-      <p>Tu t'es fait retweeter {{ twitter.retweet_count }} fois pelo<span v-if="twitter.retweet_count == 0">sale boloss </span>, y'a {{ twitter.favorite_count }} keumés qui t'ont like tiens <span v-if="twitter.favorite_count == 0">bravo <b>clap clap clap</b></span></p>
+      <p class="card-text">{{ twitter.text }}</p>
+      {{ twitter.retweet_count }} <i class="fa fa-retweet" aria-hidden="true"></i>
+      {{ twitter.favorite_count }} <i class="fa fa-heart" aria-hidden="true"></i>
     </div>
     <div class="card-footer">
       <small class="text-muted">{{ twitter.created_at }}</small>
