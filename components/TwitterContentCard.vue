@@ -17,7 +17,7 @@
             </div>
         </div>
       </div>
-      <p class="card-text">{{ twitter.text }}</p>
+      <text-formater :text="twitter.text" class="card-text"></text-formater>
       {{ twitter.retweet_count }} <i class="fa fa-retweet" aria-hidden="true"></i>
       {{ twitter.favorite_count }} <i class="fa fa-heart" aria-hidden="true"></i>
     </div>
@@ -29,7 +29,7 @@
 
 <script>
   import TextFormater from "~/components/TextFormater.vue";
-  
+
   export default {
     components: {
       TextFormater
