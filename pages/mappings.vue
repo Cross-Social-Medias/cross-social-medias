@@ -27,7 +27,7 @@
         </tr>
       </tbody>
     </table>
-    <a class="btn btn-primary" href="/mapping_new" role="button">Link</a>
+    <!-- <a class="btn btn-primary" href="/mapping_new" role="button">Link</a> -->
   </div>
 </template>
 
