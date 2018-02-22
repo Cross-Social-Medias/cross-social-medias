@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const state = () => ({
   mappings: null,
-  error: ""
+  error: "res"
 });
 
 export const mutations = {
@@ -10,7 +10,11 @@ export const mutations = {
     state.mappings = mappings.slice();
   },
   ADD_MAPPING(state, mapping) {
-    state.mappings = [...state.mappings, mapping];
+    if (!state.mappings) {
+      state.mappings = [mapping];
+    } else {
+      state.mappings = [...state.mappings, mapping];
+    }
   },
   ADD_ERROR(state, error) {
     state.error = error;
@@ -19,7 +23,7 @@ export const mutations = {
 
 export const actions = {
   fetchMappings({ commit }) {
-    axios.get(`link_api/api/v1/social_media_mappings`)
+    axios.get(`http://localhost:4000/api/v1/social_media_mappings`)
       .then(response => {
         const { data } = response.data;
         commit('FETCH_MAPPINGS', data);
@@ -37,7 +41,7 @@ export const actions = {
     commit('FETCH_MAPPINGS', mock);
   },
   addMapping({ commit }, { mapping }) {
-    axios.post(`http://8d5d2770.ngrok.io/api/v1/social_media_mappings`, mapping)
+    axios.post(`http://localhost:4000/api/v1/social_media_mappings`, mapping)
       .then(response => {
         const { data } = response.data;
         commit('ADD_MAPPING', data);
@@ -45,5 +49,8 @@ export const actions = {
       .catch(e => {
         commit('ADD_ERROR', "Something went wrong. The mappings does not exist or there is a network issue. Please Try again !");
       });
+  },
+  addMappingMock({ commit }, { mapping }) {
+    commit('ADD_MAPPING', mapping);
   }
 }
