@@ -32,7 +32,8 @@ export default {
   methods: {
     submit_mapping(e) {
       const mapping = { mapping_name: this.mapping_name, twitter_mapping: this.twitter_mapping, instagram_mapping: this.instagram_mapping };
-      this.$store.dispatch("mappings/addMapping", { mapping });
+      // this.$store.dispatch("mappings/addMapping", { mapping });
+      this.$store.dispatch("mappings/addMappingMock", { mapping });
     }
   }
 }
