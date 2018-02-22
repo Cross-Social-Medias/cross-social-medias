@@ -20,6 +20,10 @@
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Facebook</a>
           </li>
+          <li class="divider-vertical"></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/mappings">Mappings</a>
+          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <searchBar @on-submit="updateResearch">
