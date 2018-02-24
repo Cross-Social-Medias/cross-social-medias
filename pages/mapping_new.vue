@@ -31,13 +31,12 @@ export default {
   },
   methods: {
     submit_mapping(e) {
+      e.preventDefault();
       const mapping = { mapping_name: this.mapping_name, twitter_username: this.twitter_username, instagram_username: this.instagram_username };
       // this.$store.dispatch("mappings/addMapping", { mapping });
       this.$store.dispatch("mappings/addMappingMock", { mapping })
-        .then(() => {
-          e.preventDefault();
-          this.$router.replace({ path: 'mappings' })
-        });
+        .then(() => this.$router.replace({ path: 'mappings' }))
+        .catch(() => (this.error = "Error !"));
     }
   }
 }
