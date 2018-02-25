@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Log In</h1>
-    <form @submit.prevent="submit_login"  method="post">
+    <form @submit.prevent="submit_login">
       <div v-if="alert" :class="['alert', 'alert-' + alert.type]" role="alert">
         {{alert.message}}
       </div>
