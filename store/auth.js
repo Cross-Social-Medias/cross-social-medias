@@ -1,3 +1,6 @@
+import cookies from 'js-cookie'
+
+import {setAuthToken, resetAuthToken} from '~/utils/auth'
 import api from '~/api'
 
 export const state = () => ({
@@ -28,13 +31,17 @@ export const actions = {
   login ({ commit }, data) {
     return api.auth.login(data)
       .then(response => {
-        commit('SET_USER', response.data.user)
+        commit('SET_USER', response.data.user);
+        setAuthToken(response.data.token);
+        cookies.set('x-access-token', response.data.token, {expires: 7});
         return response;
       })
   },
   reset ({ commit }) {
-    commit('RESET_USER')
-    return Promise.resolve()
+    commit('RESET_USER');
+    resetAuthToken();
+    cookies.remove('x-access-token');
+    return Promise.resolve();
   },
   fetchMock({ commit }) {
     const fakeUser = {id: 1, email: "admin@admin.fr"};
@@ -46,6 +53,8 @@ export const actions = {
     if (email === "admin@admin.fr" && password === "admin") {
       const fakeUser = {id: 1, email: "admin@admin.fr"};
       commit('SET_USER', fakeUser);
+      setAuthToken(data.token);
+      cookies.set('x-access-token', data.token, {expires: 7});
       return Promise.resolve({ data: { message: "You're connected." } });
     }
     return Promise.reject({ response: { data: { message: "Password or email are invalid." }, status: 403 } });
