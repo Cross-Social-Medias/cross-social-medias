@@ -46,7 +46,7 @@ export const actions = {
     if (email === "admin@admin.fr" && password === "admin") {
       const fakeUser = {id: 1, email: "admin@admin.fr"};
       commit('SET_USER', fakeUser);
-      return Promise.resolve({ response: { data: { message: "You're connected." }, status: 200 } });
+      return Promise.resolve({ data: { message: "You're connected." } });
     }
     return Promise.reject({ response: { data: { message: "Password or email are invalid." }, status: 403 } });
   }
