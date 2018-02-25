@@ -32,8 +32,7 @@ export default {
   methods: {
     submit_mapping() {
       const mapping = { mapping_name: this.mapping_name, twitter_username: this.twitter_username, instagram_username: this.instagram_username };
-      // this.$store.dispatch("mappings/addMapping", { mapping });
-      this.$store.dispatch("mappings/addMappingMock", { mapping })
+      this.$store.dispatch("mappings/addMapping", { mapping })
         .then(() => this.$router.push({ path: 'mappings' }))
         .catch(() => (this.error = "Error !"));
     }
