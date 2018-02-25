@@ -44,6 +44,9 @@ module.exports = {
       }
     }
   },
+  plugins: [
+    '~api/index'
+  ],
   serverMiddleware: [
     '~/routes/twitter_entry_point.js'
   ],

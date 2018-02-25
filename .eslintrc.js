@@ -15,6 +15,7 @@ module.exports = {
     "space-before-function-paren": 0,
     "semi": 0,
     "quotes": 0,
+    "prefer-promise-reject-errors": 1,
     "space-before-blocks": 1,
     "indent": 1,
     "no-debugger": 1,
