@@ -50,6 +50,9 @@ module.exports = {
   serverMiddleware: [
     '~/routes/twitter_entry_point.js'
   ],
+  router: {
+    middleware: ['auth']
+  },
   modules: [
     '@nuxtjs/font-awesome',
   ],
