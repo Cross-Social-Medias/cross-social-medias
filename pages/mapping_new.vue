@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Create a new mapping</h1>
-    <form v-on:submit="submit_mapping" method="post">
+    <form @submit.prevent="submit_mapping">
       <div class="form-group">
         <label for="mapping_name">Mapping name</label>
         <input v-model="mapping_name" class="form-control" id="mapping_name">
@@ -30,8 +30,7 @@ export default {
     }
   },
   methods: {
-    submit_mapping(e) {
-      e.preventDefault();
+    submit_mapping() {
       const mapping = { mapping_name: this.mapping_name, twitter_username: this.twitter_username, instagram_username: this.instagram_username };
       // this.$store.dispatch("mappings/addMapping", { mapping });
       this.$store.dispatch("mappings/addMappingMock", { mapping })
