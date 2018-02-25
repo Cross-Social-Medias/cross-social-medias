@@ -27,7 +27,7 @@
         </tr>
       </tbody>
     </table>
-    <!-- <a class="btn btn-primary" href="/mapping_new" role="button">Link</a> -->
+    <nuxt-link to="/mapping_new" class="btn btn-primary">New mapping</nuxt-link>
   </div>
 </template>
 
