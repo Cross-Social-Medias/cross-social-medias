@@ -15,8 +15,10 @@
   "dependencies": {
     "@nuxtjs/font-awesome": "^1.0.3",
     "axios": "^0.17.1",
+    "cookie": "^0.3.1",
     "dotenv": "^4.0.0",
     "express": "latest",
+    "js-cookie": "^2.2.0",
     "nuxt": "^1.0.0-rc11",
     "twitter": "^1.7.1"
   },
