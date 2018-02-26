@@ -42,11 +42,17 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    vendor: ['vue-i18n']
   },
   serverMiddleware: [
     '~/routes/twitter_entry_point.js'
   ],
+  router: {
+    middleware: 'i18n'
+  },
+  plugins: ['~/plugins/i18n.js'],
+
   modules: [
     '@nuxtjs/font-awesome',
   ],
