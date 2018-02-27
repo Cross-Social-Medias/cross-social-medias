@@ -1,0 +1,21 @@
+{
+  "general": {
+    "and": "and",
+    "go_back": "Go back"
+  },
+  "links": {
+    "home": "Home",
+    "about": "About",
+    "english": "English version",
+    "french": "French version"
+  },
+  "home": {
+    "title": "Welcome",
+    "introduction": "This is an introduction in English."
+  },
+  "about": {
+    "project_sentence": "This project is made by ",
+    "title": "About",
+    "introduction": "This page is made to give you more informations."
+  }
+}
