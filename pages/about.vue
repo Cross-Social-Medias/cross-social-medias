@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p>This project is made by <a href="https://twitter.com/dupont_bertrand">@ber</a> and <a href="https://twitter.com/zemog_emualliug">@zemog_emualliug</a></p>
+    <p>{{ $t('about.project_sentence') }}<a href="https://twitter.com/dupont_bertrand">@ber</a> {{ $t('general.and') }} <a href="https://twitter.com/zemog_emualliug">@zemog_emualliug</a></p>
     <p>
-      To go
-      <nuxt-link to="/">Home page</nuxt-link>
+      {{ $t('general.go_back') }}
+      <nuxt-link to="/">{{ $t('links.home') }}</nuxt-link>
     </p>
   </div>
 </template>
