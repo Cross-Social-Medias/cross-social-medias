@@ -18,8 +18,7 @@
   "pages": {
     "about": {
       "project_sentence": "This project is made by ",
-      "title": "About",
-      "introduction": "This page is made to give you more informations."
+      "title": "About"
     },
     "mappings": {
       "title": "Mappings",
@@ -28,7 +27,7 @@
       "instagram_username": "Instagram username"
     },
     "twitter": {
-      "user_not_exist": "User not exist"
+      "user_not_exist": "User not exist."
     }
   },
   "components": {
