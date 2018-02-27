@@ -21,7 +21,7 @@
         </div>
       </div>
       <div v-else>
-        <div class="alert alert-info">User not exist</div>
+        <div class="alert alert-info">{{ $t('pages.twitter.user_not_exist') }}</div>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@
       </div>
     </section>
     <footer class="footer">
-      <nuxt-link to="/about">About page</nuxt-link>
+      <nuxt-link to="/about">{{ $t('pages.about.title') }}</nuxt-link>
     </footer>
   </div>
 </template>
