@@ -4,11 +4,16 @@
     "go_back": "Go back",
     "default_api_error":"Something went wrong. The mappings does not exist or there is a network issue. Please Try again !"
   },
-  "links": {
-    "home": "Home",
-    "about": "About",
-    "english": "English version",
-    "french": "French version"
+  "layouts": {
+    "default": {
+      "software_name": "POC cross social media",
+      "home": "Home",
+      "about": "About",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "mappings": "Mappings"
+    }
   },
   "pages": {
     "about": {
