@@ -1,9 +1,9 @@
 <template>
   <div class="col-md-4">
     <a v-if="provider.text === 'Twitter' "href="/twitter">
-      <h3>Social Network news from {{ provider.text }}</h3>
+      <h3>{{ $t('components.Feednews.social_media_news_from') }} {{ provider.text }}</h3>
     </a>
-    <h3 v-else>Social Network news from {{ provider.text }}</h3>
+    <h3 v-else>{{ $t('components.Feednews.social_media_news_from') }} {{ provider.text }}</h3>
   </div>
 </template>
 

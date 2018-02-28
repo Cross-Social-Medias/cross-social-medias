@@ -1,0 +1,44 @@
+{
+  "general": {
+    "and": "and",
+    "go_back": "Go back",
+    "default_api_error":"Something went wrong. The mappings does not exist or there is a network issue. Please Try again !"
+  },
+  "layouts": {
+    "default": {
+      "software_name": "POC cross social media",
+      "home": "Home",
+      "about": "About",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "mappings": "Mappings"
+    }
+  },
+  "pages": {
+    "about": {
+      "project_sentence": "This project is made by ",
+      "title": "About"
+    },
+    "mappings": {
+      "title": "Mappings",
+      "mapping_name": "Mapping name",
+      "twitter_username": "Twitter username",
+      "instagram_username": "Instagram username"
+    },
+    "twitter": {
+      "user_not_exist": "User not exist."
+    }
+  },
+  "components": {
+    "Feednews": {
+      "social_media_news_from": "Social Network news from"
+    },
+    "SearchBar": {
+      "search": "Search"
+    }
+  },
+  "stores": {
+
+  }
+}

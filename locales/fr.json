@@ -1,0 +1,44 @@
+{
+  "general": {
+    "and": "et",
+    "go_back": "Retour",
+    "default_api_error":"Une erreur est survenu, l'information n'existe pas eu ou un problème réseau a empêché la requête. Essayez ultérieurement !"
+  },
+  "layouts": {
+    "default": {
+      "software_name": "POC cross social media",
+      "home": "Accueil",
+      "about": "A propos",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "mappings": "Mappings"
+    }
+  },
+  "pages": {
+    "about": {
+      "project_sentence": "Ce projet est developpé par ",
+      "title": "A propos"
+    },
+    "mappings": {
+      "title": "Mappings",
+      "mapping_name": "Nom du mapping",
+      "twitter_username": "Nom utilisateur Twitter",
+      "instagram_username": "Nom utilisateur Instagram"
+    },
+    "twitter": {
+      "user_not_exist": "L'utilisateur n'existe pas."
+    }
+  },
+  "components": {
+    "Feednews": {
+      "social_media_news_from": "News issue de "
+    },
+    "SearchBar": {
+      "search": "Rechercher"
+    }
+  },
+  "stores": {
+
+  }
+}
