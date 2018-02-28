@@ -1,3 +1,5 @@
+const { generateRoutes } = require('./utils/router');
+
 module.exports = {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
@@ -49,7 +51,12 @@ module.exports = {
     '~/routes/twitter_entry_point.js'
   ],
   router: {
-    middleware: 'i18n'
+    middleware: 'i18n',
+    extendRoutes (routes) {
+      const newRoutes = generateRoutes(routes)
+      routes.splice(0, routes.length)
+      routes.unshift(...newRoutes)
+    }
   },
   plugins: ['~/plugins/i18n.js'],
 
