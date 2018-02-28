@@ -9,20 +9,20 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            <nuxt-link class="nav-link" to="/">Home<span class="sr-only">(current)</span></nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/twitter">Twitter</a></i>
+            <nuxt-link class="nav-link" to="/twitter">Twitter</nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Instagram</a>
+            <nuxt-link class="nav-link disabled" to="#">Instagram</nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Facebook</a>
+            <nuxt-link class="nav-link disabled" to="#">Facebook</nuxt-link>
           </li>
           <li class="divider-vertical"></li>
           <li class="nav-item">
-            <a class="nav-link" href="/mappings">Mappings</a>
+            <nuxt-link class="nav-link" to="/mappings">Mappings</nuxt-link>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
