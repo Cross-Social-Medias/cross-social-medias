@@ -9,20 +9,20 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">{{ $t('layouts.default.home') }}<span class="sr-only">(current)</span></a>
+            <nuxt-link class="nav-link" to="/">{{ $t('layouts.default.home') }}<span class="sr-only">(current)</span></nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/twitter">{{ $t('layouts.default.twitter') }}</a></i>
+            <nuxt-link class="nav-link" to="/twitter">{{ $t('layouts.default.twitter') }}</nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">{{ $t('layouts.default.instagram') }}</a>
+            <nuxt-link class="nav-link disabled" to="#">{{ $t('layouts.default.instagram') }}</nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">{{ $t('layouts.default.facebook') }}</a>
+            <nuxt-link class="nav-link disabled" to="#">{{ $t('layouts.default.facebook') }}</nuxt-link>
           </li>
           <li class="divider-vertical"></li>
           <li class="nav-item">
-            <a class="nav-link" href="/mappings">{{ $t('layouts.default.mappings') }}</a>
+            <nuxt-link class="nav-link" to="/mappings">{{ $t('layouts.default.mappings') }}</nuxt-link>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
