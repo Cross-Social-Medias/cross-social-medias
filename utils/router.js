@@ -55,7 +55,7 @@ function generateRoutes (baseRoutes, locales = []) {
       newRoutes.push(route);
     });
   });
-  console.log(newRoutes);
+  // console.log(newRoutes); uncomment to see generated routes
   return newRoutes;
 };
 
