@@ -41,12 +41,6 @@
           }
         ]
       }
-    },
-    fetch ({ store }) {
-      store.commit('research/update');
-    },
-    computed: {
-      research () { return this.$store.state.research.research; }
     }
   }
 </script>
