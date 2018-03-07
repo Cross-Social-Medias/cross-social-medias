@@ -28,6 +28,10 @@
     },
     "twitter": {
       "user_not_exist": "L'utilisateur n'existe pas."
+    },
+    "youtube": {
+      "channel_not_exist": "La chaine youtube n'existe pas.",
+      "title": "Youtube videos"
     }
   },
   "components": {
