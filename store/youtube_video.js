@@ -21,9 +21,9 @@ export const actions = {
       .then(response => {
         const { items, error } = response.data;
         const videos = items.map(item => {
-          const { title, description } = item.snippet;
+          const { title, description, publishedAt, thumbnails } = item.snippet;
           const { videoId } = item.id;
-          return { title, description, videoId };
+          return { title, description, videoId, publishedAt, thumbnail: thumbnails.medium };
         });
         commit('FETCH_VIDEOS', { videos, error });
       })
