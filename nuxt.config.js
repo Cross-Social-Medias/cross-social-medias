@@ -2,7 +2,8 @@ const { generateRoutes } = require('./utils/router');
 
 module.exports = {
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    youtubeApiKey: process.env.YOUTUBE_API_KEY
   },
   /*
   ** Headers of the page

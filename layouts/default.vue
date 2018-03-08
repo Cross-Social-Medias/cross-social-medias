@@ -15,6 +15,9 @@
             <nuxt-link class="nav-link" :to="$i18n.path('twitter')">{{ $t('layouts.default.twitter') }}</nuxt-link>
           </li>
           <li class="nav-item">
+            <nuxt-link class="nav-link" :to="$i18n.path('youtube')">{{ $t('layouts.default.youtube') }}</nuxt-link>
+          </li>
+          <li class="nav-item">
             <nuxt-link class="nav-link disabled" to="#">{{ $t('layouts.default.instagram') }}</nuxt-link>
           </li>
           <li class="nav-item">

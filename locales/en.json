@@ -12,7 +12,8 @@
       "twitter": "Twitter",
       "instagram": "Instagram",
       "facebook": "Facebook",
-      "mappings": "Mappings"
+      "mappings": "Mappings",
+      "youtube": "Youtube"
     }
   },
   "pages": {
@@ -28,6 +29,10 @@
     },
     "twitter": {
       "user_not_exist": "User not exist."
+    },
+    "youtube": {
+      "channel_not_exist": "Channel does not exist.",
+      "title": "Youtube videos"
     }
   },
   "components": {

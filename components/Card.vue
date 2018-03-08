@@ -9,15 +9,20 @@
       <div v-if="kind === 'twitter'">
         <twitter-content-card :twitter="infos" />
       </div>
+      <div v-else-if="kind === 'youtube_video'">
+        <youtube-content-card :youtube="infos" />
+      </div>
     </div>
 </template>
 
 <script>
 import TwitterContentCard from '~/components/TwitterContentCard.vue';
+import YoutubeContentCard from '~/components/YoutubeContentCard.vue';
 export default {
 
   components: {
-    TwitterContentCard
+    TwitterContentCard,
+    YoutubeContentCard
   },
   props: {
     infos: {
