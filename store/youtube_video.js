@@ -17,7 +17,7 @@ export const mutations = {
 
 export const actions = {
   fetchVideos({ commit }, { channelId }) {
-    axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&key=${process.env.youtube_api_key}`)
+    axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet,id&order=date&channelId=${channelId}&key=${process.env.youtubeApiKey}`)
       .then(response => {
         const { items, error } = response.data;
         const videos = items.map(item => {
