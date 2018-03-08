@@ -36,7 +36,7 @@
     },
     computed: {
       channelId() {
-        return "UCrurr3qbH0VFCwaoIvXOn-Q";
+        return this.$store.state.research.mapping.youtubeId;
       },
       videos() {
         return this.$store.state.youtube_video.videos;
