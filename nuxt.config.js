@@ -1,4 +1,5 @@
 const { generateRoutes } = require('./utils/router');
+require('dotenv').config();
 
 module.exports = {
   env: {
