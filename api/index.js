@@ -1,7 +1,7 @@
 import axios from 'axios'
 export default {
   auth: {
-    me: () => axios.get('auth/me'),
-    login: (data) => axios.post('auth/login', data)
+    me: () => axios.get(`fakeUrl`),
+    login: (data) => axios.post(`${process.env.serverUrl}/api/v1/sign_in`, data)
   }
 }
