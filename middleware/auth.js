@@ -1,6 +1,6 @@
 export default function ({store, redirect, route}) {
   const userIsLoggedIn = !!store.state.auth.user;
-  
+
   const authRoutes = ["admin", "mappings", "resume", "twitter", "youtube"];
   const authRegex = new RegExp(authRoutes.join("|")); // old request /^\/admin|mappings|resume|twitter(\/|$)/
 
