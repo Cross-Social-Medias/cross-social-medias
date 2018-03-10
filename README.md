@@ -12,6 +12,10 @@ consumer_key=your_consumer_key
 consumer_secret=your_consumer_secret
 access_token_key=your_access_token_key
 access_token_secret=your_access_token_secret
+
+YOUTUBE_API_KEY=your_youtube_api_key
+
+#SERVER_URL=your_server_url
 ```
 
 Cross Social Media supports declaring default environment variables in an environment file named `.env`.
