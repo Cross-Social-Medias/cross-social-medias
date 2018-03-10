@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h1>Admin page</h1>
+    <h1>{{ $t('pages.admin.title') }}</h1>
     <div v-if="user">
       <p>Hello, {{user.email}}</p>
-      <button class="btn btn-primary" role="button" @click="logOut">Log out</button>
+      <button class="btn btn-primary" role="button" @click="logOut">{{ $t('pages.admin.logout') }}</button>
     </div>
     <div v-else>
-      <p>The user is not authenticated!</p>
+      <p>{{ $t('pages.admin.unauthenticated') }}</p>
     </div>
     <br/>
-    <button class="btn btn-primary" role="button" @click="checkMe">Check Me</button>
+    <button class="btn btn-primary" role="button" @click="checkMe">{{ $t('pages.admin.check_me') }}</button>
   </div>
 </template>
 <script>
