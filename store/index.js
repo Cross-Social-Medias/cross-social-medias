@@ -16,7 +16,7 @@ export const actions = {
             console.log('Provided token is invalid:', error);
             resetAuthToken();
             resolve(false);
-          })
+          });
       } else {
         resetAuthToken();
         resolve(false);
