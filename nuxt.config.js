@@ -4,7 +4,8 @@ require('dotenv').config();
 module.exports = {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-    youtubeApiKey: process.env.YOUTUBE_API_KEY
+    youtubeApiKey: process.env.YOUTUBE_API_KEY,
+    serverUrl: process.env.SERVER_URL || 'http://localhost:4000' 
   },
   /*
   ** Headers of the page
