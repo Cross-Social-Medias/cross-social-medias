@@ -1,5 +1,9 @@
 export const state = () => ({
-  research: "AnthonyLastella"
+  research: "AnthonyLastella",
+  mapping: {
+    twitterUsername: "AnthonyLastella",
+    youtubeId: "UCrurr3qbH0VFCwaoIvXOn-Q"
+  }
 })
 
 export const getters = {

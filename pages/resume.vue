@@ -17,7 +17,7 @@
         </div>
       </div>
       <div v-else>
-        <div class="alert alert-info">User not exist</div>
+        <div class="alert alert-info">{{ $t('twitter.user_not_exist') }}</div>
       </div>
     </div>
   </div>
@@ -28,6 +28,7 @@
 export default {
   computed: {
     search() {
+      // change to search.mapping.twitter_username
       return this.$store.state.research.research;
     },
     tweets() {
