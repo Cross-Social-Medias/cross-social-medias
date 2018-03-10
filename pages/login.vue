@@ -33,8 +33,8 @@
       submit_login () {
         this.alert = null;
         this.loading = true;
-        // this.$store.dispatch('auth/login', {
-        this.$store.dispatch('auth/loginMock', {
+        this.$store.dispatch('auth/login', {
+        // this.$store.dispatch('auth/loginMock', {
           email: this.email,
           password: this.password
         }).then((result) => {
