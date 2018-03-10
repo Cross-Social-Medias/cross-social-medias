@@ -27,10 +27,13 @@
           <li class="nav-item">
             <nuxt-link class="nav-link" :to="$i18n.path('mappings')">{{ $t('layouts.default.mappings') }}</nuxt-link>
           </li>
-          <li class="nav-item">
+          <li v-if="user" class="nav-item">
+            <a class="nav-link" @click="logOut">Log out</a>
+          </li>
+          <li v-else>
             <a class="nav-link" href="/login">Log In</a>
           </li>
-          <li class="nav-item">
+          <li v-if="user" class="nav-item">
             <a class="nav-link" href="/admin">Admin</a>
           </li>
         </ul>
@@ -56,9 +59,18 @@
     data () {
       return {}
     },
+    computed: {
+      user () { return (this.$store.state.auth || {}).user || null }
+    },
     methods: {
       updateResearch (newSearch) {
         this.$store.commit('research/update', newSearch);
+      },
+      logOut() {
+        this.$store.dispatch('auth/reset')
+          .then(() => {
+            this.$router.push('/');
+          });
       }
     }
   }
