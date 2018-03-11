@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>Mappings</h1>
+    <h1>{{ $t('pages.mappings.title') }}</h1>
     <table class="table table-striped">
       <thead>
         <tr>
           <th>#</th>
-          <th>Mapping name</th>
-          <th>Twitter username</th>
-          <th>Instagram username</th>
+          <th>{{ $t('pages.mappings.mapping_name') }}</th>
+          <th>{{ $t('pages.mappings.twitter_username') }}</th>
+          <th>{{ $t('pages.mappings.instagram_username') }}</th>
         </tr>
       </thead>
       <tbody>
