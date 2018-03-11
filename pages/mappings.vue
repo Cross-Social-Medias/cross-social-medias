@@ -45,6 +45,7 @@ export default {
   },
   created () {
     if (!this.mappings) {
+      // this.$store.dispatch("mappings/fetchMappingsMock");
       this.$store.dispatch("mappings/fetchMappings");
     }
   }

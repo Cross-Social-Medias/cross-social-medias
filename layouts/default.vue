@@ -27,6 +27,15 @@
           <li class="nav-item">
             <nuxt-link class="nav-link" :to="$i18n.path('mappings')">{{ $t('layouts.default.mappings') }}</nuxt-link>
           </li>
+          <li v-if="user" class="nav-item">
+            <a class="nav-link" @click="logOut">{{ $t('layouts.default.logout') }}</a>
+          </li>
+          <li v-else>
+            <a class="nav-link" href="/login">{{ $t('layouts.default.login') }}</a>
+          </li>
+          <li v-if="user" class="nav-item">
+            <a class="nav-link" href="/admin">{{ $t('layouts.default.admin') }}</a>
+          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <searchBar @on-submit="updateResearch">
@@ -50,9 +59,18 @@
     data () {
       return {}
     },
+    computed: {
+      user () { return (this.$store.state.auth || {}).user || null }
+    },
     methods: {
       updateResearch (newSearch) {
         this.$store.commit('research/update', newSearch);
+      },
+      logOut() {
+        this.$store.dispatch('auth/reset')
+          .then(() => {
+            this.$router.push('/');
+          });
       }
     }
   }

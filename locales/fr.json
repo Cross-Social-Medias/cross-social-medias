@@ -13,7 +13,10 @@
       "instagram": "Instagram",
       "facebook": "Facebook",
       "mappings": "Mappings",
-      "youtube": "Youtube"
+      "youtube": "Youtube",
+      "admin": "Admin",
+      "login": "Login",
+      "logout": "Logout"
     }
   },
   "pages": {
@@ -33,6 +36,12 @@
     "youtube": {
       "channel_not_exist": "La chaine youtube n'existe pas.",
       "title": "Youtube videos"
+    },
+    "admin": {
+      "title": "Page administrateur",
+      "logout": "Déconnecter",
+      "unauthenticated": "Vous n'etes pas connecté",
+      "check_me": "Check me"
     }
   },
   "components": {
