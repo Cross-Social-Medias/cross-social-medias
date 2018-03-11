@@ -44,8 +44,8 @@ export default {
     }
   },
   created () {
-    // this.$store.dispatch("mappings/fetchMappings");
-    this.$store.dispatch("mappings/fetchMappingsMock");
+    this.$store.dispatch("mappings/fetchMappings");
+    // this.$store.dispatch("mappings/fetchMappingsMock");
   }
 }
 </script>
