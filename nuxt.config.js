@@ -1,6 +1,10 @@
+const { generateRoutes } = require('./utils/router');
+require('dotenv').config();
+
 module.exports = {
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    youtubeApiKey: process.env.YOUTUBE_API_KEY
   },
   /*
   ** Headers of the page
@@ -42,12 +46,23 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    vendor: ['vue-i18n']
   },
   serverMiddleware: [
     '~/routes/instagram_entry_point.js',
     '~/routes/twitter_entry_point.js'
   ],
+  router: {
+    middleware: 'i18n',
+    extendRoutes (routes) {
+      const newRoutes = generateRoutes(routes)
+      routes.splice(0, routes.length)
+      routes.unshift(...newRoutes)
+    }
+  },
+  plugins: ['~/plugins/i18n.js'],
+
   modules: [
     '@nuxtjs/font-awesome',
   ],
