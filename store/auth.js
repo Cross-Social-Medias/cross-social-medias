@@ -31,7 +31,8 @@ export const actions = {
   login ({ commit }, data) {
     return api.auth.login(data)
       .then(response => {
-        commit('SET_USER', response.data.user);
+        const user = Object.assign({}, response.data.user, { token: response.data.token });
+        commit('SET_USER', user);
         setAuthToken(response.data.token);
         cookies.set('x-access-token', response.data.token, {expires: 7});
         return response;
