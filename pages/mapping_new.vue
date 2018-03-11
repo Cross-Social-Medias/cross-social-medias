@@ -29,9 +29,18 @@ export default {
       instagram_username: null
     }
   },
+  computed: {
+    user () { return (this.$store.state.auth || {}).user || null }
+  },
   methods: {
     submit_mapping() {
-      const mapping = { mapping_name: this.mapping_name, twitter_username: this.twitter_username, instagram_username: this.instagram_username };
+      const mapping = {
+        mapping_name: this.mapping_name,
+        twitter_username: this.twitter_username,
+        instagram_username: this.instagram_username,
+        created_by: this.user.id,
+        user_id: this.user.id
+      };
       this.$store.dispatch("mappings/addMapping", { mapping })
         .then(() => this.$router.push({ path: 'mappings' }))
         .catch(() => (this.error = "Error !"));
