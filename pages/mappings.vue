@@ -17,16 +17,16 @@
             {{index+1}}
           </td>
           <td>
-            {{mapping.mapping_name}}
+            <a>{{mapping.mapping_name}}</a>
           </td>
           <td>
-            {{mapping.twitter_username}}
+            <a :href="'https://twitter.com/' + mapping.twitter_username">{{mapping.twitter_username}}</a>
           </td>
           <td>
-            {{mapping.youtube_channel_id}}
+            <a :href="'https://www.youtube.com/channel/' + mapping.youtube_channel_id">{{mapping.youtube_channel_id}}</a>
           </td>
           <td>
-            {{mapping.instagram_username}}
+            <a :href="'https://www.instagram.com/' + mapping.instagram_username">{{mapping.instagram_username}}</a>
           </td>
         </tr>
       </tbody>
