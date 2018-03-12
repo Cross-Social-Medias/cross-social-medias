@@ -7,6 +7,7 @@
           <th>#</th>
           <th>{{ $t('pages.mappings.mapping_name') }}</th>
           <th>{{ $t('pages.mappings.twitter_username') }}</th>
+          <th>{{ $t('pages.mappings.youtube_channel_id') }}</th>
           <th>{{ $t('pages.mappings.instagram_username') }}</th>
         </tr>
       </thead>
@@ -20,6 +21,9 @@
           </td>
           <td>
             {{mapping.twitter_username}}
+          </td>
+          <td>
+            {{mapping.youtube_channel_id}}
           </td>
           <td>
             {{mapping.instagram_username}}

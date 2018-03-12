@@ -25,7 +25,8 @@
       "title": "Mappings",
       "mapping_name": "Nom du mapping",
       "twitter_username": "Nom utilisateur Twitter",
-      "instagram_username": "Nom utilisateur Instagram"
+      "instagram_username": "Nom utilisateur Instagram",
+      "youtube_channel_id": "Id de le chaine Youtube"
     },
     "twitter": {
       "user_not_exist": "L'utilisateur n'existe pas."
