@@ -48,7 +48,12 @@
       "mapping_name": "Mapping Name",
       "twitter_username": "Twitter username",
       "instagram_username": "Instagram mapping",
-      "submit": "Submit"
+      "youtube_channel_id": "Youtube channel id",
+      "submit": "Submit",
+      "mapping_name_help" : "Field used to find the mapping",
+      "twitter_username_help" : "The @username field that you can find above the bio profile",
+      "instagram_username_help" : "The @username at the end of the instagram profile page url",
+      "youtube_channel_id_help" : "The last params in the youtube channel url"
     }
   },
   "components": {

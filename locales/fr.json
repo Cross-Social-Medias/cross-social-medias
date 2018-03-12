@@ -48,7 +48,12 @@
       "mapping_name": "Nom du mapping",
       "twitter_username": "Pseudo twitter",
       "instagram_username": "Pseudo instagram",
-      "submit": "Valider"
+      "youtube_channel_id": "Id du la chaine youtube",
+      "submit": "Valider",
+      "mapping_name_help" : "Le champ utilisé pour lors d'une recherche",
+      "twitter_username_help" : "le champ @username que l'on peut trouver au dessus du champ biographie",
+      "instagram_username_help" : "Le champ @username qui se trouve à la fin de l'url de la page du profile",
+      "youtube_channel_id_help" : "La dernier parametre dans l'url dans la page de la chaine youtube"
     }
   },
   "components": {
