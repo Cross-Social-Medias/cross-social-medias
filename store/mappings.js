@@ -29,7 +29,7 @@ export const actions = {
     const mock = [
       { "twitter_username": "AnthonyLastella", "mapping_name": "Anthony Lastella", "instagram_username": "anthonyLastella", youtube_channel_id: "UCrurr3qbH0VFCwaoIvXOn-Q" },
       { "twitter_username": "Ber", "mapping_name": "Bertrand Dupond", "instagram_username": "fake_insta", youtube_channel_id: "jdklgkdgldskd" },
-      { "twitter_username": "zemog_emualluig", "mapping_name": "Guillaume Gomez", "instagram_username": "fake_insta2", youtube_channel_id: "jdfkgd" }
+      { "twitter_username": "zemog_emualliug", "mapping_name": "Guillaume Gomez", "instagram_username": "fake_insta2", youtube_channel_id: "jdfkgd" }
     ];
     commit('FETCH_MAPPINGS', mock);
   }
