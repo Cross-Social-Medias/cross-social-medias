@@ -1,20 +1,20 @@
 <template>
   <div>
-    <h1>Create a new mapping</h1>
+    <h1>{{ $t('pages.mapping_new.title') }}</h1>
     <form @submit.prevent="submit_mapping">
       <div class="form-group">
-        <label for="mapping_name">Mapping name</label>
+        <label for="mapping_name">{{ $t('pages.mapping_new.mapping_name') }}</label>
         <input v-model="mapping_name" class="form-control" id="mapping_name">
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Twitter mapping</label>
+        <label for="exampleInputEmail1">{{ $t('pages.mapping_new.twitter_username') }}</label>
         <input v-model="twitter_username" class="form-control" id="twitter_username">
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Instagram mapping</label>
+        <label for="exampleInputEmail1">{{ $t('pages.mapping_new.instagram_username') }}</label>
         <input v-model="instagram_username" class="form-control" id="instagram_username">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">{{ $t('pages.mapping_new.submit') }}</button>
     </form>
   </div>
 </template>

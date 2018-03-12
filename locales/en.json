@@ -42,6 +42,13 @@
       "logout": "Log out",
       "unauthenticated": "Your are not authenticated",
       "check_me": "Check me"
+    },
+    "mapping_new": {
+      "title": "Create a new mapping",
+      "mapping_name": "Mapping Name",
+      "twitter_username": "Twitter username",
+      "instagram_username": "Instagram mapping",
+      "submit": "Submit"
     }
   },
   "components": {

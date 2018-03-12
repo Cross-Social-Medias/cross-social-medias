@@ -42,6 +42,13 @@
       "logout": "Déconnecter",
       "unauthenticated": "Vous n'etes pas connecté",
       "check_me": "Check me"
+    },
+    "mapping_new": {
+      "title": "Créer un nouveau mapping",
+      "mapping_name": "Nom du mapping",
+      "twitter_username": "Pseudo twitter",
+      "instagram_username": "Pseudo instagram",
+      "submit": "Valider"
     }
   },
   "components": {
