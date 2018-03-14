@@ -4,7 +4,8 @@ require('dotenv').config();
 module.exports = {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-    youtubeApiKey: process.env.YOUTUBE_API_KEY
+    youtubeApiKey: process.env.YOUTUBE_API_KEY,
+    serverUrl: process.env.SERVER_URL || 'http://localhost:4000' 
   },
   /*
   ** Headers of the page
@@ -49,19 +50,21 @@ module.exports = {
     },
     vendor: ['vue-i18n']
   },
+  plugins: [
+    '~api/index',
+    '~/plugins/i18n.js'
+  ],
   serverMiddleware: [
     '~/routes/twitter_entry_point.js'
   ],
   router: {
-    middleware: 'i18n',
+    middleware: ['auth', 'i18n'],
     extendRoutes (routes) {
       const newRoutes = generateRoutes(routes)
       routes.splice(0, routes.length)
       routes.unshift(...newRoutes)
     }
   },
-  plugins: ['~/plugins/i18n.js'],
-
   modules: [
     '@nuxtjs/font-awesome',
   ],
