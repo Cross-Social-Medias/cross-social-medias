@@ -10,6 +10,7 @@ export default {
 }
 
 const token = cookies.get('x-access-token');
+const user = cookies.get('user');
 if (token) {
   setAuthToken(token);
 } else {

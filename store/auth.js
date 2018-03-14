@@ -35,6 +35,7 @@ export const actions = {
         commit('SET_USER', user);
         setAuthToken(response.data.token);
         cookies.set('x-access-token', response.data.token, {expires: 7});
+        cookies.set('user', response.data.user, {expires: 7});
         return response;
       })
   },
@@ -42,6 +43,7 @@ export const actions = {
     commit('RESET_USER');
     resetAuthToken();
     cookies.remove('x-access-token');
+    cookies.remove('user');
     return Promise.resolve();
   },
   fetchMock({ commit }) {
@@ -56,6 +58,7 @@ export const actions = {
       commit('SET_USER', fakeUser);
       setAuthToken(data.token);
       cookies.set('x-access-token', data.token, {expires: 7});
+      cookies.set('user', fakeUser, {expires: 7});
       return Promise.resolve({ data: { message: "You're connected." } });
     }
     return Promise.reject({ response: { data: { message: "Password or email are invalid." }, status: 403 } });
