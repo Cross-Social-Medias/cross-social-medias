@@ -6,6 +6,10 @@
           {{alert.message}}
         </div>
         <div class="form-group">
+          <label for="name"><b>{{ $t('pages.sign_up.name') }}</b></label>
+          <input v-model="name" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
           <label for="username"><b>{{ $t('pages.sign_up.username') }}</b></label>
           <input v-model="username" class="form-control" id="username" required>
         </div>
@@ -33,6 +37,7 @@
   export default {
     data () {
       return {
+        name: '',
         username: '',
         email: '',
         password: '',
@@ -47,15 +52,16 @@
         this.loading = true;
         if (this.password !== this.repeat_password) {
           this.alert = { type: 'danger', message: this.$t('pages.sign_up.invalid_password') };
+          return;
         }
-        const data = { stooge: this.username, email: this.email, password: this.password };
+        const data = { name: this.name, username: this.username, email: this.email, password: this.password };
         api.auth.sign_up(data)
           .then(response => {
-            this.error = "";
+            this.alert = "";
             this.$router.push({ path: 'login' });
           })
           .catch(e => {
-            this.error = "Something went wrong. Try again !";
+            this.alert = { type: 'danger', message: e.response.data.message };
           })
       }
     }
