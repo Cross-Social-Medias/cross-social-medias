@@ -16,7 +16,8 @@
       "youtube": "Youtube",
       "admin": "Admin",
       "login": "Login",
-      "logout": "Logout"
+      "logout": "Logout",
+      "sign_in": "Sign in"
     }
   },
   "pages": {
@@ -51,7 +52,8 @@
       "password": "Password",
       "reset-password": "Reset password",
       "submit": "Submit",
-      "invalid_password": "Passwords are different"
+      "invalid_password": "Passwords are different",
+      "login":"Login"
     }
   },
   "components": {
