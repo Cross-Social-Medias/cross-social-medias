@@ -42,6 +42,15 @@
       "logout": "Log out",
       "unauthenticated": "Your are not authenticated",
       "check_me": "Check me"
+    },
+    "sign_up": {
+      "title": "Sign up",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "reset-password": "Reset password",
+      "submit": "Submit",
+      "invalid_password": "Passwords are different"
     }
   },
   "components": {

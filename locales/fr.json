@@ -42,6 +42,15 @@
       "logout": "Déconnecter",
       "unauthenticated": "Vous n'etes pas connecté",
       "check_me": "Check me"
+    },
+    "sign_up": {
+      "title": "Creer un compte",
+      "username": "Pseudo",
+      "email": "Email",
+      "password": "Mot de passe",
+      "reset-password": "Repetez le mot de passe",
+      "submit": "Créer un compte",
+      "invalid_password": "Les mots de passe de correspondent pas"
     }
   },
   "components": {
