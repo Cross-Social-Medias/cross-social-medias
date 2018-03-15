@@ -20,7 +20,6 @@
 
 <script>
   export default {
-    layout: 'fullscreen',
     data () {
       return {
         email: '',

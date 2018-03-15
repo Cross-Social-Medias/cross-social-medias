@@ -51,7 +51,8 @@ module.exports = {
     vendor: ['vue-i18n']
   },
   plugins: [
-    '~api/index'
+    '~api/index',
+    '~/plugins/i18n.js'
   ],
   serverMiddleware: [
     '~/routes/twitter_entry_point.js'
@@ -64,7 +65,6 @@ module.exports = {
       routes.unshift(...newRoutes)
     }
   },
-  plugins: ['~/plugins/i18n.js'],
   modules: [
     '@nuxtjs/font-awesome',
     '@nuxtjs/dotenv',
