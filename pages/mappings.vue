@@ -27,7 +27,7 @@
         </tr>
       </tbody>
     </table>
-    <!-- <a class="btn btn-primary" href="/mapping_new" role="button">Link</a> -->
+    <nuxt-link to="/mapping_new" class="btn btn-primary">New mapping</nuxt-link>
   </div>
 </template>
 
@@ -44,8 +44,10 @@ export default {
     }
   },
   created () {
-    // this.$store.dispatch("mappings/fetchMappings");
-    this.$store.dispatch("mappings/fetchMappingsMock");
+    if (!this.mappings) {
+      // this.$store.dispatch("mappings/fetchMappingsMock");
+      this.$store.dispatch("mappings/fetchMappings");
+    }
   }
 }
 </script>
