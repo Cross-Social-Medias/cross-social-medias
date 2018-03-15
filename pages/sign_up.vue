@@ -28,6 +28,10 @@
 
         <button type="submit" class="btn btn-primary">{{ $t('pages.sign_up.submit') }}</button>
     </form>
+    <hr/>
+    <div>
+      <nuxt-link class="btn btn-primary" to="/login">{{ $t('pages.sign_up.login') }}</nuxt-link>
+    </div>
   </div>
 </template>
 
