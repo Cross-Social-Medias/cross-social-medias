@@ -25,16 +25,19 @@
           </li>
           <li class="divider-vertical"></li>
           <li class="nav-item">
-            <nuxt-link class="nav-link" :to="$i18n.path('mappings')">{{ $t('layouts.default.mappings') }}</nuxt-link>
+            <nuxt-link class="nav-link" to="$i18n.path('mappings')">{{ $t('layouts.default.mappings') }}</nuxt-link>
           </li>
           <li v-if="user" class="nav-item">
-            <a class="nav-link" @click="logOut">{{ $t('layouts.default.logout') }}</a>
+            <nuxt-link class="nav-link" @click="logOut">{{ $t('layouts.default.logout') }}</nuxt-link>
           </li>
           <li v-else>
-            <a class="nav-link" href="/login">{{ $t('layouts.default.login') }}</a>
+            <nuxt-link class="nav-link" to="/login">{{ $t('layouts.default.login') }}</nuxt-link>
           </li>
           <li v-if="user" class="nav-item">
-            <a class="nav-link" href="/admin">{{ $t('layouts.default.admin') }}</a>
+            <nuxt-link class="nav-link" to="/admin">{{ $t('layouts.default.admin') }}</nuxt-link>
+          </li>
+          <li v-else>
+            <nuxt-link class="nav-link" to="/sign_in">{{ $t('layouts.default.sign_in') }}</nuxt-link>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
