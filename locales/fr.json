@@ -45,6 +45,7 @@
     },
     "sign_up": {
       "title": "Creer un compte",
+      "name": "Nom et prenom",
       "username": "Pseudo",
       "email": "Email",
       "password": "Mot de passe",

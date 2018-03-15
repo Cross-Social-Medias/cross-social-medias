@@ -45,6 +45,7 @@
     },
     "sign_up": {
       "title": "Sign up",
+      "name": "Full name",
       "username": "Username",
       "email": "Email",
       "password": "Password",
