@@ -5,7 +5,8 @@ import {setAuthToken, resetAuthToken} from '~/utils/auth';
 export default {
   auth: {
     me: () => axios.get(`fakeUrl`),
-    login: (data) => axios.post(`${process.env.serverUrl}/api/v1/sign_in`, data)
+    login: (data) => axios.post(`${process.env.serverUrl}/api/v1/sign_in`, data),
+    sign_up: (data) => axios.post(`${process.env.serverUrl}/api/v1/sign_up`, {user: data})
   }
 }
 
