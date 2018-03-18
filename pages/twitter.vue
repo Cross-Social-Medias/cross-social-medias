@@ -36,8 +36,7 @@
     },
     computed: {
       search() {
-        // change to search.mapping.twitter_username
-        return this.$store.state.research.research;
+        return this.$store.state.research.mapping.twitterUsername;
       },
       tweets() {
         return this.$store.state.tweets.tweets;
