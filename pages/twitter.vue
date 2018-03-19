@@ -52,6 +52,13 @@
       if (!this.$store.state.tweets.tweets) {
         this.$store.dispatch("tweets/fetchTweets", { search: this.search });
       }
+    },
+    watch: {
+      search(newVal, oldVal) {
+        if (newVal !== oldVal) {
+          this.$store.dispatch("tweets/fetchTweets", { search: newVal });
+        }
+      }
     }
   }
 </script>
