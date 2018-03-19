@@ -14,11 +14,17 @@ export const mutations = {
   },
   ADD_ERROR(state, error) {
     state.error = error;
+  },
+  CLEAR(state) {
+    state.tweets = null;
+    state.title = null;
+    state.error = "";
   }
 };
 
 export const actions = {
   fetchTweets({ commit }, { search }) {
+    commit('CLEAR');
     axios.get(`${process.env.baseUrl}/twitter_entry_point?username=${search}`)
       .then(response => {
         const { tweets, title, error } = response.data;
