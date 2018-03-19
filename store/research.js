@@ -14,9 +14,11 @@ export const getters = {
 };
 
 export const mutations = {
-  UPDATE (state, {research, mapping}) {
-    state.research = research;
-    state.mapping = Object.assign({}, {twitterUsername: mapping.twitter_username, youtubeId: mapping.youtube_id});
+  UPDATE (state, {search, mapping}) {
+    state.research = search;
+    const { twitter_username, youtube_channel_id } = mapping;
+    state.mapping = Object.assign({}, {twitterUsername: twitter_username || "", youtubeId: youtube_channel_id || ""});
+    console.log(Object.assign({}, {twitterUsername: twitter_username || "", youtubeId: youtube_channel_id || ""}));
   },
   ADD_ERROR(state, error) {
     state.error = error;
@@ -28,7 +30,8 @@ export const actions = {
     axios.get(`${process.env.serverUrl}/api/v1/search?mapping_name=${search}`)
       .then(response => {
         const { mappings } = response.data;
-        const mapping = mappings[0];
+        const mapping = mappings[0] || [];
+        console.log("mapping ", mapping)
         commit('UPDATE', { search, mapping });
       })
       .catch(e => {

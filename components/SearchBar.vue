@@ -28,6 +28,7 @@ export default {
   watch: {
     mapping(newValue, oldValue) {
       this.$store.dispatch("tweets/fetchTweets", { search: newValue.twitterUsername });
+      this.$store.dispatch("youtube_video/fetchVideos", { channelId: newValue.youtubeId });
     }
   }
 }

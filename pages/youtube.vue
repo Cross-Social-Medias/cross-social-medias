@@ -49,6 +49,13 @@
       if (!this.$store.state.youtube_video.videos) {
         this.$store.dispatch("youtube_video/fetchVideos", { channelId: this.channelId });
       }
+    },
+    watch: {
+      channelId(newVal, oldVal) {
+        if (newVal !== oldVal) {
+          this.$store.dispatch("youtube_video/fetchVideos", { channelId: newVal });
+        }
+      }
     }
   }
 </script>
