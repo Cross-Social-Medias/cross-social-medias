@@ -34,9 +34,9 @@ export const actions = {
   },
   fetchMappingsMock({ commit }) {
     const mock = [
-      { "twitter_username": "AnthonyLastellaMock", "mapping_name": "Anthony Lastella", "instagram_username": "anthonyLastella" },
-      { "twitter_username": "BerMock", "mapping_name": "Bertrand Dupond", "instagram_username": "fake_insta" },
-      { "twitter_username": "zemog_emualluigMock", "mapping_name": "Guillaume Gomez", "instagram_username": "fake_insta2" }
+      { "twitterUsername": "AnthonyLastellaMock", "mappingName": "Anthony Lastella", "instagramUsername": "anthonyLastella" },
+      { "twitterUsername": "BerMock", "mappingName": "Bertrand Dupond", "instagramUsername": "fake_insta" },
+      { "twitterUsername": "zemog_emualluigMock", "mappingName": "Guillaume Gomez", "instagramUsername": "fake_insta2" }
     ];
     commit('FETCH_MAPPINGS', mock);
   },
