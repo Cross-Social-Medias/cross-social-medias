@@ -25,8 +25,8 @@ export const actions = {
   fetchMappings({ commit }) {
     axios.get(`${process.env.serverUrl}/api/v1/social_media_mappings`)
       .then(response => {
-        const { data } = response.data;
-        commit('FETCH_MAPPINGS', data);
+        const { mappings } = response.data;
+        commit('FETCH_MAPPINGS', mappings);
       })
       .catch(e => {
         commit('ADD_ERROR', "Something went wrong. The mappings does not exist or there is a network issue. Please Try again !");
