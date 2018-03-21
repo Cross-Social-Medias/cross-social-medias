@@ -25,8 +25,8 @@ export const actions = {
   fetchMappings({ commit }) {
     axios.get(`${process.env.serverUrl}/api/v1/social_media_mappings`)
       .then(response => {
-        const { data } = response.data;
-        commit('FETCH_MAPPINGS', data);
+        const { mappings } = response.data;
+        commit('FETCH_MAPPINGS', mappings);
       })
       .catch(e => {
         commit('ADD_ERROR', "Something went wrong. The mappings does not exist or there is a network issue. Please Try again !");
@@ -34,9 +34,9 @@ export const actions = {
   },
   fetchMappingsMock({ commit }) {
     const mock = [
-      { "twitter_username": "AnthonyLastellaMock", "mapping_name": "Anthony Lastella", "instagram_username": "anthonyLastella" },
-      { "twitter_username": "BerMock", "mapping_name": "Bertrand Dupond", "instagram_username": "fake_insta" },
-      { "twitter_username": "zemog_emualluigMock", "mapping_name": "Guillaume Gomez", "instagram_username": "fake_insta2" }
+      { "twitter_username": "AnthonyLastella", "mapping_name": "Anthony Lastella", "instagram_username": "anthonyLastella", "youtube_channel_id": "UCrurr3qbH0VFCwaoIvXOn-Q" },
+      { "twitter_username": "Ber", "mapping_name": "Bertrand Dupond", "instagram_username": "fake_insta", "youtube_channel_id": "jdklgkdgldskd" },
+      { "twitter_username": "zemog_emualliug", "mapping_name": "Guillaume Gomez", "instagram_username": "fake_insta2", "youtube_channel_id": "jdfkgd" }
     ];
     commit('FETCH_MAPPINGS', mock);
   },
