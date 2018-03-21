@@ -16,7 +16,8 @@
       "youtube": "Youtube",
       "admin": "Admin",
       "login": "Login",
-      "logout": "Logout"
+      "logout": "Logout",
+      "sign_in": "Sign in"
     }
   },
   "pages": {
@@ -43,6 +44,17 @@
       "logout": "Log out",
       "unauthenticated": "Your are not authenticated",
       "check_me": "Check me"
+    },
+    "sign_up": {
+      "title": "Sign up",
+      "name": "Full name",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "reset-password": "Reset password",
+      "submit": "Submit",
+      "invalid_password": "Passwords are different",
+      "login":"Login"
     },
     "mapping_new": {
       "title": "Create a new mapping",
