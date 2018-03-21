@@ -67,6 +67,7 @@ module.exports = {
   },
   modules: [
     '@nuxtjs/font-awesome',
+    '@nuxtjs/dotenv',
   ],
   css: [
      '@/assets/css/main.css'

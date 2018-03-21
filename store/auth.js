@@ -20,7 +20,7 @@ export const actions = {
   fetch ({ commit }) {
     return api.auth.me()
       .then(response => {
-        commit('SET_USER', response.data.result)
+        commit('SET_USER', response.data)
         return response;
       })
       .catch(error => {

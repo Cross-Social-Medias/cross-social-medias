@@ -25,8 +25,8 @@ export default {
         });
     },
     checkMe() {
-      // this.$store.dispatch('auth/fetch');
-      this.$store.dispatch('auth/fetchMock');
+      this.$store.dispatch('auth/fetch');
+      // this.$store.dispatch('auth/fetchMock');
     }
   }
 }

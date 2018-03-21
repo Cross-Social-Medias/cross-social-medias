@@ -7,8 +7,8 @@ export const actions = {
       const cookies = cookie.parse(context.req.headers.cookie || '');
       if (cookies.hasOwnProperty('x-access-token')) {
         setAuthToken(cookies['x-access-token']);
-        // dispatch('auth/fetch')
-        dispatch('auth/fetchMock')
+        dispatch('auth/fetch')
+        // dispatch('auth/fetchMock')
           .then(result => {
             resolve(true);
           })

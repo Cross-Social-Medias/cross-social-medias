@@ -17,7 +17,10 @@ export const mutations = {
 
 export const actions = {
   fetchVideos({ commit }, { channelId }) {
-    axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet,id&order=date&channelId=${channelId}&maxResults=20&key=${process.env.youtubeApiKey}`)
+    axios.get(
+      `https://www.googleapis.com/youtube/v3/search?part=snippet,id&order=date&channelId=${channelId}&maxResults=20&key=${process.env.youtubeApiKey}`,
+      {transformRequest: [(data, headers) => { delete headers.common.Authorization; return data; }]}
+    )
       .then(response => {
         const { items, error } = response.data;
         const videos = items.map(item => {
@@ -28,7 +31,7 @@ export const actions = {
         commit('FETCH_VIDEOS', { videos, error });
       })
       .catch(e => {
-        commit('ADD_ERROR', "Something went wrong. The user does not exist or there is a network issue. Please Try again !");
+        commit('ADD_ERROR', e.response.data.error.message);
       });
   }
 }
