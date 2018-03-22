@@ -42,5 +42,16 @@ export const actions = {
       .catch(e => {
         commit('ADD_ERROR', e.response.data.error.message);
       });
+  },
+  searchMock({ commit }, { search }) {
+    const mappings = [
+      {mapping_name: "test", twitter_username: "test", youtube_channel_id: "123456"},
+      {mapping_name: "test2", twitter_username: "test2", youtube_channel_id: "123456"},
+      {mapping_name: "other", twitter_username: "other", youtube_channel_id: "123456"},
+      {mapping_name: "other2", twitter_username: "other2", youtube_channel_id: "123456"},
+      {mapping_name: "test3", twitter_username: "test3", youtube_channel_id: "123456"},
+      {mapping_name: "test4", twitter_username: "test4", youtube_channel_id: "123456"}
+    ];
+    return mappings.filter(mapping => mapping.mapping_name.indexOf(search) >= 0);
   }
 };
