@@ -44,6 +44,7 @@
       enter() {
         this.selection = this.matches[this.current];
         this.open = false;
+        this.$emit("on-click", this.selection);
       },
       up() {
         if (this.current > 0) {
@@ -68,6 +69,11 @@
         this.selection = this.matches[index];
         this.open = false;
         this.$emit("on-click", this.selection);
+      }
+    },
+    watch: {
+      selection(newValue) {
+        this.$emit("on-change", newValue);
       }
     }
   }
