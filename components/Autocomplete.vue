@@ -5,10 +5,11 @@
         @keydown.down = 'down'
         @keydown.up = 'up'
         @input = 'change'
+        v-on:blur= 'close'
     />
-    <ul style="width:100%">
+    <ul class="list-group" style="width:100%">
       <li v-for="(suggestion, index) in matches"
-          v-bind:class="{'active': isActive(index)}"
+          v-bind:class="{'active': isActive(index), 'list-group-item': true}"
           @click="suggestionClick(index)">
         {{ suggestion }}
       </li>
@@ -64,6 +65,10 @@
           this.open = true;
           this.current = 0;
         }
+      },
+      close() {
+        console.log("close")
+        this.open = false;
       },
       suggestionClick(index) {
         this.selection = this.matches[index];
