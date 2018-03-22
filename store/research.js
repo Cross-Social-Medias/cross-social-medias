@@ -52,6 +52,6 @@ export const actions = {
       {mapping_name: "test3", twitter_username: "test3", youtube_channel_id: "123456"},
       {mapping_name: "test4", twitter_username: "test4", youtube_channel_id: "123456"}
     ];
-    return mappings.filter(mapping => mapping.mapping_name.indexOf(search) >= 0);
+    return mappings.filter(mapping => mapping.mapping_name.toLowerCase().includes(search.toLowerCase()));
   }
 };

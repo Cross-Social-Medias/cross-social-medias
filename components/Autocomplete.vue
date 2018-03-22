@@ -33,7 +33,7 @@
     },
     computed: {
       matches() {
-        const matches = this.suggestions.filter((str) => str.indexOf(this.selection) >= 0);
+        const matches = this.suggestions.filter((str) => str.toLowerCase().includes(this.selection.toLowerCase()));
         return matches;
       },
       openSuggestion() {
