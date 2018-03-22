@@ -1,17 +1,16 @@
 <template>
-  <div style="position:relative" v-bind:class="{'open':openSuggestion}">
+  <div class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" style="position:relative" v-bind:class="{'open':openSuggestion}">
     <input class="form-control" type="text" v-model="selection"
         @keydown.enter = 'enter'
         @keydown.down = 'down'
         @keydown.up = 'up'
         @input = 'change'
     />
-    <ul class="dropdown-menu" style="width:100%">
-        <li v-for="(suggestion, index) in matches"
-            v-bind:class="{'active': isActive(index)}"
-            @click="suggestionClick(index)"
-        >
-        <a href="#">{{ suggestion }}</a>
+    <ul style="width:100%">
+      <li v-for="(suggestion, index) in matches"
+          v-bind:class="{'active': isActive(index)}"
+          @click="suggestionClick(index)">
+        {{ suggestion }}
       </li>
     </ul>
   </div>
@@ -22,25 +21,20 @@
     data() {
       return {
         open: false,
-        current: 0
+        current: 0,
+        selection: ''
       }
     },
     props: {
       suggestions: {
         type: Array,
         required: true
-      },
-      selection: {
-        type: String,
-        required: true,
-        twoWay: true
       }
     },
     computed: {
       matches() {
-        return this.suggestions.filter((str) => {
-          return str.indexOf(this.selection) >= 0;
-        });
+        const matches = this.suggestions.filter((str) => str.indexOf(this.selection) >= 0);
+        return matches;
       },
       openSuggestion() {
         return this.selection !== "" && this.matches.length !== 0 && this.open === true;
@@ -73,6 +67,7 @@
       suggestionClick(index) {
         this.selection = this.matches[index];
         this.open = false;
+        this.$emit("on-click", this.selection);
       }
     }
   }
