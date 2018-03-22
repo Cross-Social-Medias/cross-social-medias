@@ -18,7 +18,7 @@ YOUTUBE_API_KEY=your_youtube_api_key
 #SERVER_URL=your_server_url
 ```
 
-Cross Social Media use [this server](https://github.com/Cross-Social-Medias/cross_social_media_api). We recommend to use this one to test this repository locally.
+Cross Social Media use [this server](https://github.com/Cross-Social-Medias/cross_social_media_api). We recommend to use this one to test this repository locally. (SERVER_URL=localhost:4000)
 
 Cross Social Media supports declaring default environment variables in an environment file named `.env`.
 
