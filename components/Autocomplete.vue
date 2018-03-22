@@ -7,9 +7,9 @@
         @input = 'change'
     />
     <ul class="dropdown-menu" style="width:100%">
-        <li v-for="suggestion in matches"
-            v-bind:class="{'active': isActive($index)}"
-            @click="suggestionClick($index)"
+        <li v-for="(suggestion, index) in matches"
+            v-bind:class="{'active': isActive(index)}"
+            @click="suggestionClick(index)"
         >
         <a href="#">{{ suggestion }}</a>
       </li>
