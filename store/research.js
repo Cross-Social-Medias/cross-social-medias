@@ -6,6 +6,7 @@ export const state = () => ({
     twitterUsername: "AnthonyLastella",
     youtubeId: "UCrurr3qbH0VFCwaoIvXOn-Q"
   },
+  suggestionMappings: [],
   error: ""
 })
 
@@ -22,17 +23,21 @@ export const mutations = {
   },
   ADD_ERROR(state, error) {
     state.error = error;
+  },
+  RESEARCH(state, {mappings}) {
+    state.suggestionMappings = mappings.slice();
   }
 };
 
 export const actions = {
-  update({ commit }, { search }) {
+  update({ commit }, { search, mapping }) {
+    commit('UPDATE', { search, mapping });
+  },
+  search({ commit }, { search }) {
     axios.get(`${process.env.serverUrl}/api/v1/search?mapping_name=${search}`)
       .then(response => {
         const { mappings } = response.data;
-        const mapping = mappings[0] || [];
-        console.log("mapping ", mapping)
-        commit('UPDATE', { search, mapping });
+        commit('RESEARCH', { mappings });
       })
       .catch(e => {
         commit('ADD_ERROR', e.response.data.error.message);
