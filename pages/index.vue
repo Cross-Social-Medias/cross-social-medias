@@ -44,4 +44,3 @@
     }
   }
 </script>
-<style src="~/assets/css/index.css"></style>
