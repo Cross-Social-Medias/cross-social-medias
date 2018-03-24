@@ -67,7 +67,7 @@
     },
     methods: {
       updateResearch (newSearch) {
-        this.$store.commit('research/update', newSearch);
+        this.$store.dispatch('research/update', {search: newSearch});
       },
       logOut() {
         this.$store.dispatch('auth/reset')

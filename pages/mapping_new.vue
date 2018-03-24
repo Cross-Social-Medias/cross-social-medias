@@ -48,7 +48,6 @@ export default {
         twitter_username: this.twitter_username,
         instagram_username: this.instagram_username,
         youtube_channel_id: this.youtube_channel_id,
-        created_by: this.user.id,
         user_id: this.user.id
       };
       this.$store.dispatch("mappings/addMapping", { mapping })

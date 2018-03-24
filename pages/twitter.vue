@@ -36,8 +36,7 @@
     },
     computed: {
       search() {
-        // change to search.mapping.twitter_username
-        return this.$store.state.research.research;
+        return this.$store.state.research.mapping.twitterUsername;
       },
       tweets() {
         return this.$store.state.tweets.tweets;
@@ -52,6 +51,13 @@
     created () {
       if (!this.$store.state.tweets.tweets) {
         this.$store.dispatch("tweets/fetchTweets", { search: this.search });
+      }
+    },
+    watch: {
+      search(newVal, oldVal) {
+        if (newVal !== oldVal) {
+          this.$store.dispatch("tweets/fetchTweets", { search: newVal });
+        }
       }
     }
   }

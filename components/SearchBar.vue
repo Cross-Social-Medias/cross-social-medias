@@ -9,15 +9,26 @@
 export default {
   data () {
     return {
-      search: "AnthonyLastella"
+      search: this.$store.state.research.research
+    }
+  },
+  computed: {
+    mapping() {
+      return this.$store.state.research.mapping;
     }
   },
   methods: {
     submitResearch (e) {
       this.$emit("on-submit", this.search);
       // call twitter api
-      this.$store.dispatch("tweets/fetchTweets", { search: this.search });
+      this.$store.dispatch("research/update", { search: this.search });
       e.preventDefault();
+    }
+  },
+  watch: {
+    mapping(newValue, oldValue) {
+      this.$store.dispatch("tweets/fetchTweets", { search: newValue.twitterUsername });
+      this.$store.dispatch("youtube_video/fetchVideos", { channelId: newValue.youtubeId });
     }
   }
 }
