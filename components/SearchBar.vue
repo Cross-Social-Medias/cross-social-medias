@@ -1,7 +1,7 @@
 <template>
   <span>
     <autocomplete :suggestions="suggestionMappingsUsername" @on-click="updateSearch" @on-change="findMappings" :defaultMatch="defaultMatch"></autocomplete>
-    <button class="btn btn-outline-success my-2 my-sm-0" @click="submitResearch">{{ $t('components.SearchBar.search') }}</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" @click="submitResearch">{{ $t('components.search_bar.search') }}</button>
   </span>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   data () {
     return {
       search: this.$store.state.research.research,
-      defaultMatch: "Create new link"
+      defaultMatch: this.$t('components.search_bar.default_match')
     }
   },
   computed: {
