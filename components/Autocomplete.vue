@@ -30,12 +30,18 @@
       suggestions: {
         type: Array,
         required: true
+      },
+      defaultMatch: {
+        type: String
       }
     },
     computed: {
       matches() {
-        const matches = this.suggestions.filter((str) => str.toLowerCase().includes(this.selection.toLowerCase()));
-        return matches;
+        const newMatches = this.suggestions.filter((str) => str.toLowerCase().includes(this.selection.toLowerCase()));
+        if (newMatches.length === 0 && this.selection.length !== 0) {
+          return [this.defaultMatch];
+        }
+        return newMatches;
       },
       openSuggestion() {
         return this.selection !== "" && this.matches.length !== 0 && this.open === true;
@@ -67,7 +73,6 @@
         }
       },
       close() {
-        console.log("close")
         this.open = false;
       },
       suggestionClick(index) {
