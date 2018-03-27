@@ -1,6 +1,6 @@
 <template>
   <span>
-    <autocomplete :suggestions="suggestionMappingsUsername" @on-click="updateSearch" @on-change="findMappings"></autocomplete>
+    <autocomplete :suggestions="suggestionMappingsUsername" @on-click="updateSearch" @on-change="findMappings" :defaultMatch="defaultMatch"></autocomplete>
     <button class="btn btn-outline-success my-2 my-sm-0" @click="submitResearch">{{ $t('components.SearchBar.search') }}</button>
   </span>
 </template>
@@ -14,7 +14,8 @@ export default {
   },
   data () {
     return {
-      search: this.$store.state.research.research
+      search: this.$store.state.research.research,
+      defaultMatch: "Create new link"
     }
   },
   computed: {
@@ -37,6 +38,11 @@ export default {
     },
     updateSearch(newSearch) {
       const mapping = this.suggestionMappings.find(mapping => mapping.mapping_name === newSearch);
+      // redirect to create mappging view
+      if (newSearch === this.defaultMatch) {
+        this.$router.push('/mapping_new');
+        return;
+      }
       this.$store.dispatch("research/update", { mapping });
       this.search = newSearch;
     },
