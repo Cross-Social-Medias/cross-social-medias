@@ -60,8 +60,9 @@
     "Feednews": {
       "social_media_news_from": "News issue de "
     },
-    "SearchBar": {
-      "search": "Rechercher"
+    "search_bar": {
+      "search": "Rechercher",
+      "default_match": "Créer un nouveau mapping"
     }
   },
   "stores": {

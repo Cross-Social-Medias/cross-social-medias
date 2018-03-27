@@ -40,7 +40,11 @@ export default {
       const mapping = this.suggestionMappings.find(mapping => mapping.mapping_name === newSearch);
       // redirect to create mappging view
       if (newSearch === this.defaultMatch) {
-        this.$router.push('/mapping_new');
+        if (this.$i18n.locale === "en") {
+          this.$router.push(`/mapping_new`);
+        } else {
+          this.$router.push(`/${this.$i18n.locale}/mapping_new`);
+        }
         return;
       }
       this.$store.dispatch("research/update", { mapping });
