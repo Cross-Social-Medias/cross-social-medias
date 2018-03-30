@@ -15,8 +15,9 @@
       "mappings": "Mappings",
       "youtube": "Youtube",
       "admin": "Admin",
-      "login": "Login",
-      "logout": "Logout"
+      "login": "Se connecter",
+      "logout": "Se deconnecter",
+      "sign_in": "Creer un compte"
     }
   },
   "pages": {
@@ -28,7 +29,8 @@
       "title": "Mappings",
       "mapping_name": "Nom du mapping",
       "twitter_username": "Nom utilisateur Twitter",
-      "instagram_username": "Nom utilisateur Instagram"
+      "instagram_username": "Nom utilisateur Instagram",
+      "youtube_channel_id": "Id de le chaine Youtube"
     },
     "twitter": {
       "user_not_exist": "L'utilisateur n'existe pas."
@@ -42,6 +44,17 @@
       "logout": "Déconnecter",
       "unauthenticated": "Vous n'etes pas connecté",
       "check_me": "Check me"
+    },
+    "sign_up": {
+      "title": "Creer un compte",
+      "name": "Nom et prenom",
+      "username": "Pseudo",
+      "email": "Email",
+      "password": "Mot de passe",
+      "reset-password": "Repetez le mot de passe",
+      "submit": "Créer un compte",
+      "invalid_password": "Les mots de passe de correspondent pas",
+      "login":"Se connecter"
     },
     "mapping_new": {
       "title": "Créer un nouveau mapping",
